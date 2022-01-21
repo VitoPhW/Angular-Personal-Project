@@ -1,7 +1,9 @@
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { AccountService } from './../services/account.service';
 import { Component, OnInit } from '@angular/core';
 import { IUser } from '../models/IUser';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -13,24 +15,34 @@ export class NavComponent implements OnInit {
   // loggedIn: boolean = false;
   currentUser$: Observable<IUser | null>;
 
-  constructor(private accountService: AccountService) {
-    this.currentUser$ = this.accountService.currentUser$;
-   }
+  constructor
+    (private accountService: AccountService,
+    private router: Router,
+    private toastr: ToastrService)
+    {
+      this.currentUser$ = this.accountService.currentUser$;
+    }
 
   ngOnInit(): void { }
 
   login(){
     this.accountService.login(this.model)
     .subscribe(response => {
+      this.router.navigateByUrl('/products');
       console.log(response);
     }, error => {
       console.log('Failed to login');
+      this.toastr.error(error.message, error.error, {
+        positionClass:'toast-bottom-right',
+        progressBar: true
+      });
     }, () => {
       console.log('Login complete ✨')
     });
   }
 
   logout(){
+    this.router.navigateByUrl('/');
     this.accountService.logout();
   }
 

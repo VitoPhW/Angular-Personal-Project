@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AccountService } from '../services/account.service';
 
@@ -11,7 +12,9 @@ export class RegisterComponent implements OnInit {
   // @Input() usersFromHomeComponent: any; // to show the users list in dropdown
   @Output() cancelRegister = new EventEmitter<boolean>();
 
-  constructor(private accountService: AccountService) { }
+  constructor(
+    private accountService: AccountService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +25,13 @@ export class RegisterComponent implements OnInit {
         console.log(data);
         this.cancel();
       },
-      error => console.log(error)
+      error => {
+        this.toastr.error(error.message, error.error, {
+          positionClass:'toast-bottom-right',
+          progressBar: true
+        });
+        console.log(error);
+      }
     )
   }
 

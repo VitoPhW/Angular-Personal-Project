@@ -10,7 +10,9 @@ import { ToastrModule } from 'ngx-toastr';
       positionClass: 'toast-bottom-right',
       progressBar: true,
       maxOpened: 3,
-      preventDuplicates: true
+      preventDuplicates: true,
+      countDuplicates: true,
+      resetTimeoutOnDuplicate: true
     })
   ],
   exports: [

@@ -8,17 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule } from "@angular/common/http";
 import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
-import { MemberListComponent } from './members/member-list/member-list.component';
-import { MemberDetailComponent } from './members/member-detail/member-detail.component';
-import { ProductDetailComponent } from './products/product-detail/product-detail.component';
-import { ProductListComponent } from './products/product-list/product-list.component';
 import { AboutComponent } from './about/about.component';
-import { ToastrModule } from 'ngx-toastr';
+import { CoreModule } from './modules/core.module';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +25,8 @@ import { ToastrModule } from 'ngx-toastr';
     RegisterComponent,
     ListsComponent,
     MessagesComponent,
-    MemberListComponent,
     MemberDetailComponent,
-    ProductDetailComponent,
-    ProductListComponent,
+    MemberListComponent,
     AboutComponent
   ],
   imports: [
@@ -40,8 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    BsDropdownModule.forRoot(),
-    ToastrModule.forRoot()
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

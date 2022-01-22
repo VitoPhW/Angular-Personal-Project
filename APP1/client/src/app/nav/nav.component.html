@@ -8,26 +8,19 @@
     <!-- <div class="collapse navbar-collapse" id="navbarsExample07"> -->
       <!-- <ul *ngIf="currentUser$ | async" class="navbar-nav mr-auto"> -->
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/products">Store</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/prodlists">Products</a>
-        </li>
+
+        <ng-container *ngIf="currentUser$ | async">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/products">Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/prodlists">Products</a>
+          </li>
+        </ng-container>
+
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/about">About</a>
         </li>
-        <li *ngIf="currentUser$ | async" class="nav-item pointer">
-          <a class="nav-link" (click)="logout()">Logout</a>
-        </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown07">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
       </ul>
 
       <div class="dropdown" *ngIf="currentUser$ | async" dropdown>

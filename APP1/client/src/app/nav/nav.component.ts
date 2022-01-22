@@ -1,4 +1,4 @@
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { AccountService } from './../services/account.service';
 import { Component, OnInit } from '@angular/core';
 import { IUser } from '../models/IUser';
@@ -17,8 +17,8 @@ export class NavComponent implements OnInit {
 
   constructor
     (private accountService: AccountService,
-    private router: Router,
-    private toastr: ToastrService)
+     private router: Router,
+     private toastr: ToastrService)
     {
       this.currentUser$ = this.accountService.currentUser$;
     }
@@ -32,10 +32,7 @@ export class NavComponent implements OnInit {
       console.log(response);
     }, error => {
       console.log('Failed to login');
-      this.toastr.error(error.message, error.error, {
-        positionClass:'toast-bottom-right',
-        progressBar: true
-      });
+      this.toastr.error(error.error.errors.Password + "\n" + error.error.errors.Username, error.error.title);
     }, () => {
       console.log('Login complete ✨')
     });

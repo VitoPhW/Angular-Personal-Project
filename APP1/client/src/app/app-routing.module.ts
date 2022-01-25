@@ -1,3 +1,8 @@
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AboutComponent } from './about/about.component';
 import { NgModule } from '@angular/core';
@@ -20,17 +25,24 @@ const routes: Routes = [
         path: 'products',
         loadChildren: () => import('./modules/products.module').then(p => p.ProductsModule)
       },
-      { path: 'prodlists', component: ListsComponent }
+      { path: 'prodlists', component: ListsComponent },
+      { path: 'products/:id', component: ProductDetailComponent},
+
+      {
+        path: 'members',
+        loadChildren: () => import('./modules/members.module').then(m => m.MembersModule)
+      },
+      { path: 'members/:id', component: MemberDetailComponent}
     ]
   },
-  {
-    path: 'about',
-    component: AboutComponent,
-  },
+  { path: 'about', component: AboutComponent },
+  { path: 'errors', component: TestErrorsComponent },
+  { path: 'not-found', component: NotFoundComponent},
+  { path: 'server-error', component: ServerErrorComponent},
   {
     path: '**', // non-existing-rout
     pathMatch: 'full',
-    component: HomeComponent
+    component: NotFoundComponent
   }
 ];
 

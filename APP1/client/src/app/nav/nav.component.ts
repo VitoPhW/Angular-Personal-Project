@@ -30,11 +30,6 @@ export class NavComponent implements OnInit {
     .subscribe(response => {
       this.router.navigateByUrl('/products');
       console.log(response);
-    }, error => {
-      console.log('Failed to login');
-      this.toastr.error(error.error.errors.Password + "\n" + error.error.errors.Username, error.error.title);
-    }, () => {
-      console.log('Login complete ✨')
     });
   }
 

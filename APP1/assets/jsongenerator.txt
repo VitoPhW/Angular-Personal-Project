@@ -1,0 +1,83 @@
+// Users (male)
+
+[
+  '{{repeat(5)}}',
+  {
+    UserName: '{{firstName("male")}}',
+    Type: '{{integer(0, 2)}}',
+    FirstName:'{{firstName("male")}}',
+    LastName: '{{surname("male")}}',
+    Email: '{{email()}}',
+    Phone: '{{phone("05x-xxxxxxx")}}',
+    DateOfBirth: '{{date(new Date(1950,0,1), new Date(1999, 11, 31), "YYYY-MM-dd")}}',
+	Created: '{{date(new Date(2019, 0, 1), new Date(2020,5,30), "YYYY-MM-dd")}}',
+    Country: '{{country()}}',
+    City: '{{city()}}',
+    Street: '{{street()}}',
+    Building: '{{integer([1], [200])}}',
+    Appartment: '{{integer([1], [400])}}'
+  }
+]
+// Users (female)
+
+[
+  '{{repeat(5)}}',
+  {
+    UserName: '{{firstName("female")}}',
+    Type: '{{integer(0, 2)}}',
+    FirstName:'{{firstName("female")}}',
+    LastName: '{{surname("female")}}',
+    Email: '{{email()}}',
+    Phone: '{{phone("05x-xxxxxxx")}}',
+    DateOfBirth: '{{date(new Date(1950,0,1), new Date(1999, 11, 31), "YYYY-MM-dd")}}',
+	Created: '{{date(new Date(2019, 0, 1), new Date(2020,5,30), "YYYY-MM-dd")}}',
+    Country: '{{country()}}',
+    City: '{{city()}}',
+    Street: '{{street()}}',
+    Building: '{{integer([1], [200])}}',
+    Appartment: '{{integer([1], [400])}}'
+  }
+]
+
+// Categories:
+
+[
+  '{{repeat(5)}}',
+  {
+    UserName: '{{firstName("male")}}',
+    Type: '{{integer(0, 2)}}',
+    FirstName:'{{firstName("male")}}',
+    LastName: '{{surname("male")}}',
+    Email: '{{email()}}',
+    Phone: '{{phone("05x-xxxxxxx")}}',
+    DateOfBirth: '{{date(new Date(1950,0,1), new Date(1999, 11, 31), "YYYY-MM-dd")}}',
+	  Created: '{{date(new Date(2019, 0, 1), new Date(2020,5,30), "YYYY-MM-dd")}}',
+    Country: '{{country()}}',
+    City: '{{city()}}',
+    Street: '{{street()}}',
+    Building: '{{integer([1], [200])}}',
+    Appartment: '{{integer([1], [400])}}',
+    Photos: function(num) { return 'https://randomuser.me/api/portraits/men/' + num.integer(1,99) + '.jpg';}
+  }
+]
+
+// Products
+
+[
+  '{{repeat(5)}}',
+  {
+    ProductName: '{{surname()}}',
+    ProductDescription: '{{lorem(2, "sentences")}}',
+    CategoryName: '{{random("Manufact", "Bristo", "Recritube", "Orbalix", "Ginkogene")}}',
+    UnitPrice: '{{floating(20.00, 900.00, 2)}}',
+    UnitsInStock: '{{integer(0, 200)}}',
+    Photos: [
+        {
+          Url: function(num) {
+          return 'https://picsum.photos/' + num.integer(200,400) + '/' + num.integer(200,400) + '.jpg';
+        },
+        isMain: true
+      }
+    ]
+  }
+]

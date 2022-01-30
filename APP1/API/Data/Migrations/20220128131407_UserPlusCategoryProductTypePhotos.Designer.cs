@@ -3,14 +3,16 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220128131407_UserPlusCategoryProductTypePhotos")]
+    partial class UserPlusCategoryProductTypePhotos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,18 +23,6 @@ namespace API.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<int>("Appartment")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Building")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("City")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Country")
-                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("TEXT");
@@ -63,9 +53,6 @@ namespace API.Data.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Street")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("Type")
                         .HasColumnType("INTEGER");
 
@@ -87,9 +74,6 @@ namespace API.Data.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PhotoUrl")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("CategoryName");
 
                     b.ToTable("Category");
@@ -101,6 +85,12 @@ namespace API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int?>("ProductID")
                         .HasColumnType("INTEGER");
 
@@ -110,10 +100,9 @@ namespace API.Data.Migrations
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("isMain")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryName");
 
                     b.HasIndex("ProductID");
 
@@ -155,6 +144,10 @@ namespace API.Data.Migrations
 
             modelBuilder.Entity("API.Entities.Photo", b =>
                 {
+                    b.HasOne("API.Entities.Category", null)
+                        .WithMany("Photo")
+                        .HasForeignKey("CategoryName");
+
                     b.HasOne("API.Entities.Product", null)
                         .WithMany("Photos")
                         .HasForeignKey("ProductID");
@@ -167,6 +160,11 @@ namespace API.Data.Migrations
                         .HasForeignKey("CategoryName1");
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("API.Entities.Category", b =>
+                {
+                    b.Navigation("Photo");
                 });
 
             modelBuilder.Entity("API.Entities.Product", b =>

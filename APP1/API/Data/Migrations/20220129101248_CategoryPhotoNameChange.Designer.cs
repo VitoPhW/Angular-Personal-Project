@@ -3,14 +3,16 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220129101248_CategoryPhotoNameChange")]
+    partial class CategoryPhotoNameChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,10 +89,12 @@ namespace API.Data.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PhotoUrl")
-                        .HasColumnType("TEXT");
+                    b.Property<int?>("PhotoId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("CategoryName");
+
+                    b.HasIndex("PhotoId");
 
                     b.ToTable("Category");
                 });
@@ -101,6 +105,9 @@ namespace API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int?>("ProductID")
                         .HasColumnType("INTEGER");
 
@@ -109,9 +116,6 @@ namespace API.Data.Migrations
 
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
-
-                    b.Property<bool>("isMain")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -151,6 +155,15 @@ namespace API.Data.Migrations
                     b.HasIndex("CategoryName1");
 
                     b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("API.Entities.Category", b =>
+                {
+                    b.HasOne("API.Entities.Photo", "Photo")
+                        .WithMany()
+                        .HasForeignKey("PhotoId");
+
+                    b.Navigation("Photo");
                 });
 
             modelBuilder.Entity("API.Entities.Photo", b =>

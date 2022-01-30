@@ -1,0 +1,27 @@
+[
+  {
+    "CategoryName": "Manufact",
+    "CategoryDescription": "Ut voluptate elit eu excepteur do sunt excepteur amet excepteur ut non nostrud mollit est. Est quis do consequat eiusmod eu duis proident officia laborum qui aliquip.",
+    "PhotoUrl": "https://randomuser.me/api/portraits/lego/4.jpg"
+  },
+  {
+    "CategoryName": "Bristo",
+    "CategoryDescription": "Deserunt proident irure elit est ut dolore nisi. Aliqua et ex voluptate officia nisi enim consequat ut sint eiusmod in non esse cupidatat.",
+    "PhotoUrl": "https://randomuser.me/api/portraits/lego/3.jpg"
+  },
+  {
+    "CategoryName": "Recritube",
+    "CategoryDescription": "Eu elit irure excepteur esse consequat incididunt elit sit laborum ea. Culpa nostrud excepteur non aliqua aliqua nisi consequat et mollit proident ex dolore.",
+    "PhotoUrl": "https://randomuser.me/api/portraits/lego/1.jpg"
+  },
+  {
+    "CategoryName": "Orbalix",
+    "CategoryDescription": "Officia esse Lorem non proident pariatur ullamco aliqua laboris ea. Commodo Lorem deserunt eu ullamco do exercitation labore anim consequat est officia fugiat veniam.",
+    "PhotoUrl": "https://randomuser.me/api/portraits/lego/6.jpg"
+  },
+  {
+    "CategoryName": "Ginkogene",
+    "CategoryDescription": "Incididunt proident id culpa esse excepteur officia proident aliqua est non cillum ex qui. Pariatur culpa laboris do nostrud et reprehenderit aliqua eiusmod consectetur consequat proident culpa sunt.",
+    "PhotoUrl": "https://randomuser.me/api/portraits/lego/5.jpg"
+  }
+]

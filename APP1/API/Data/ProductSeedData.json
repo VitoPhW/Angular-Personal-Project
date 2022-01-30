@@ -1,0 +1,67 @@
+[
+  {
+    "ProductName": "Sanchez",
+    "ProductDescription": "Proident aliqua minim et consequat nulla officia culpa laborum. Commodo sunt enim irure id incididunt deserunt exercitation enim sint.",
+    "CategoryName": "Recritube",
+    "UnitPrice": 152.59,
+    "UnitsInStock": 90,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://picsum.photos/205/350.jpg"
+      }
+    ]
+  },
+  {
+    "ProductName": "Parsons",
+    "ProductDescription": "Commodo non Lorem Lorem enim aliquip proident do reprehenderit velit veniam elit eiusmod sunt incididunt. Fugiat labore culpa sunt cupidatat est tempor laboris dolore tempor.",
+    "CategoryName": "Ginkogene",
+    "UnitPrice": 863.4,
+    "UnitsInStock": 8,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://picsum.photos/225/241.jpg"
+      }
+    ]
+  },
+  {
+    "ProductName": "Calhoun",
+    "ProductDescription": "Ipsum cupidatat voluptate eiusmod sunt officia veniam veniam nisi aliquip. Ipsum et voluptate ad non reprehenderit sunt aute cillum sunt nostrud sint ex et.",
+    "CategoryName": "Bristo",
+    "UnitPrice": 104.06,
+    "UnitsInStock": 112,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://picsum.photos/338/353.jpg"
+      }
+    ]
+  },
+  {
+    "ProductName": "Witt",
+    "ProductDescription": "Qui consequat dolor sunt ullamco duis pariatur id nisi in laboris. Reprehenderit qui quis tempor mollit.",
+    "CategoryName": "Manufact",
+    "UnitPrice": 812.03,
+    "UnitsInStock": 136,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://picsum.photos/333/276.jpg"
+      }
+    ]
+  },
+  {
+    "ProductName": "Barnett",
+    "ProductDescription": "Dolor exercitation minim veniam elit mollit ea sunt anim dolor fugiat reprehenderit nulla do. Enim est cillum ad do exercitation est id nisi.",
+    "CategoryName": "Bristo",
+    "UnitPrice": 887.42,
+    "UnitsInStock": 24,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://picsum.photos/362/210.jpg"
+      }
+    ]
+  }
+]

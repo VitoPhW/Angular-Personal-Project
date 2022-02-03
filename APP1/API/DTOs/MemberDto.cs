@@ -1,36 +1,20 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using API.Extensions;
+using API.Entities;
 
-namespace API.Entities
+namespace API.DTOs
 {
-    public class AppUser
+    public class MemberDto
     {
         public int Id { get; set; }
         public string UserName { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
-        
-        public UserType Type { get; set; }
-
-        [MaxLength(40)]
         public string FirstName { get; set; }
-
-        [MaxLength(50)]
         public string LastName { get; set; }
-
-        [EmailAddress, Required, MaxLength(100)]
         public string Email { get; set; }
-
-        [Phone, MaxLength(20)]
+        public int Seniority { get; set; }
         public string Phone { get; set; }
-
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Date)]
         public DateTime? DateOfBirth { get; set; }
-        public DateTime Created { get; set; } = DateTime.Now;
-
+        public DateTime Created { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
         public string Street { get; set; }

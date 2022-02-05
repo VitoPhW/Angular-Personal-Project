@@ -1,0 +1,37 @@
+.card:hover img {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+  opacity: 0.7;
+}
+
+.card img {
+  transform: scale(1);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+  opacity: 0.7;
+}
+
+.card-img-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.item-icons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -62px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+}
+
+.card:hover .item-icons {
+  opacity: 1;
+  bottom: -16px;
+}
+
+.animate {
+  transition: all 0.3s ease-in-out;
+}

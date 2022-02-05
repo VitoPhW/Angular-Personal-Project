@@ -1,0 +1,31 @@
+<div class="card mb-4">
+  <div class="card-img-wrapper">
+    <img class="card-img-top" [src]="item.photoUrl" alt="{{item.productname}}">
+    <ul class="list-inline item-icons animate text-center">
+      <li class="list-inline-item">
+        <button class="btn btn-primary">
+          <i class="fa fa-heart"></i>
+        </button>
+    </li>
+      <li class="list-inline-item">
+        <button class="btn btn-primary" routerLink="/products/{{item.productname}}">
+          <i class="fa fa-info"></i>
+        </button>
+    </li>
+      <li class="list-inline-item">
+        <button class="btn btn-primary">
+          <i class="fa fa-cart-plus"></i>
+        </button>
+    </li>
+    </ul>
+  </div>
+  <div class="card-body p-1">
+    <h6 class="card-title text-center mg-1">
+      <i class="fa fa-tag mr-2"></i>{{item.productname}}
+    </h6>
+    <p class="card-text text-muted text-center">
+      {{item.unitPrice}}
+    </p>
+
+  </div>
+</div>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductListComponent } from '../products/product-list/product-list.component';
 import { ProductDetailComponent } from '../products/product-detail/product-detail.component';
+import { ProductCardComponent } from '../products/product-card/product-card.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent, pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductCardComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ const routes: Routes = [
   exports: [
     RouterModule,
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductCardComponent
   ]
 })
 export class ProductsModule { }

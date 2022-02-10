@@ -1,1 +1,32 @@
-<h1>{{item?.productname}}</h1>
+<div class="row" *ngIf="item">
+  <div class="col-4">
+    <div class="card">
+      <img class="card-img-top img-thumbnail" src="{{item.photoUrl || './assets/user.png'}}" alt="{{item.productname}}">
+      <div class="card-body">
+        <div>
+          <strong>Category:</strong>
+          <p>{{item.categoryName}}</p>
+        </div>
+        <div>
+          <strong>Price:</strong>
+          <p>{{item.unitPrice}}</p>
+        </div>
+        <div>
+          <strong>Left:</strong>
+          <p>{{item.unitsInStock}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-8">
+    <tabset class="item-tabset">
+      <tab heading="Description">
+        <h4>Description:</h4>
+        <p>{{item.productDescription}}</p>
+      </tab>
+      <tab heading="Photos">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+      </tab>
+    </tabset>
+  </div>
+</div>

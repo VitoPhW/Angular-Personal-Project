@@ -1,0 +1,58 @@
+<div class="row" *ngIf="member">
+  <div class="col-4">
+    <h1>Your Profile</h1>
+  </div>
+  <div class="col-8">
+   <div class="alert alert-info">
+     <p>
+       <strong>Information</strong>
+       You have made changes. any unsaved changes will be lost
+     </p>
+   </div>
+  </div>
+  <div class="col-4">
+      <div class="card">
+        <img class="card-img-top img-thumbnail" src="{{'./assets/user.png'}}" alt="{{member.firstName}} {{member.lastName}}">
+        <div class="card-body">
+          <div>
+            <h4>Seniority:</h4>
+            <p>{{member.seniority}}</p>
+          </div>
+          <div>
+            <h4>Birth Date:</h4>
+            <p>{{member.dateOfBirth}}</p>
+          </div>
+          <div>
+            <h4>Registered on:</h4>
+            <p>{{member.created}}</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-success btn-block">Save Changes</button>
+        </div>
+      </div>
+  </div>
+  <div class="col-8">
+    <tabset class="member-tabset">
+      <tab heading="{{member.userName}}'s details">
+        <form>
+          <h4>Email:</h4>
+          <input type="text" [(ngModel)]="member.email" name="email" class="form-control mx-2">
+          <h4 class="mt-2">Phone:</h4>
+          <input type="text" [(ngModel)]="member.phone" name="phone" class="form-control mx-2">
+          <h4 class="mt-2">Location:</h4>
+          <div class="form-inline">
+            <label class="mt-2" for="City">City:</label>
+            <input type="text" [(ngModel)]="member.city" name="city" class="form-control mx-2">
+            <label class="mt-2" for="Country">Country:</label>
+            <input type="text" [(ngModel)]="member.country" name="country" class="form-control mx-2">
+            <label class="mt-2" for="Street">Street:</label>
+            <input type="text" [(ngModel)]="member.street" name="street" class="form-control mx-2">
+            <label class="mt-2" for="Building">Building:</label>
+            <input type="text" [(ngModel)]="member.building" name="building" class="form-control mx-2">
+          </div>
+        </form>
+      </tab>
+    </tabset>
+  </div>
+</div>

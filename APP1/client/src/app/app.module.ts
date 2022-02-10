@@ -15,16 +15,13 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { MessagesComponent } from './messages/messages.component';
 import { CoreModule } from './modules/core.module';
-import { MemberListComponent } from './members/member-list/member-list.component';
-import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { AboutComponent } from './about/about.component';
 import { ListsComponent } from './lists/lists.component';
 import { ProductsModule } from './modules/products.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
-import { ProductCardComponent } from './products/product-card/product-card.component';
-import { MemberCardComponent } from './members/member-card/member-card.component';
+import { MemberEditComponent } from './member-edit/member-edit.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +34,9 @@ import { MemberCardComponent } from './members/member-card/member-card.component
     AboutComponent,
     TestErrorsComponent,
     NotFoundComponent,
-    ServerErrorComponent
-  ],
+    ServerErrorComponent,
+      MemberEditComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

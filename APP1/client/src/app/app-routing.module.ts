@@ -1,3 +1,4 @@
+import { MemberEditComponent } from './member-edit/member-edit.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
@@ -21,18 +22,21 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
     children: [
+      // products
       {
         path: 'products',
         loadChildren: () => import('./modules/products.module').then(p => p.ProductsModule)
       },
-      { path: 'products/:productname', component: ProductDetailComponent},
+      // { path: 'products/:productname', component: ProductDetailComponent},
       { path: 'prodlists', component: ListsComponent },
-
+      // members
       {
         path: 'members',
         loadChildren: () => import('./modules/members.module').then(m => m.MembersModule)
       },
-      { path: 'members/:id', component: MemberDetailComponent}
+      { path: 'members/:id', component: MemberDetailComponent},
+      // member (my profile)
+      { path: 'member/edit', component: MemberEditComponent }
     ]
   },
   { path: 'about', component: AboutComponent },

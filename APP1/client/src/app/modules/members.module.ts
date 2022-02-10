@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { MemberCardComponent } from '../members/member-card/member-card.component';
+import { SharedModule } from './shared.module';
+
 
 const routes: Routes = [
   { path: '',  component: MemberListComponent, pathMatch: 'full' },
@@ -18,6 +20,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ],
   exports: [

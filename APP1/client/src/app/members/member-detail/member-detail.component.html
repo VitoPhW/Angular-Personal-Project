@@ -1,1 +1,44 @@
-<h1>{{member?.userName}}</h1>
+<div class="row" *ngIf="member">
+  <div class="col-4">
+      <div class="card">
+          <img class="card-img-top img-thumbnail" src="{{'./assets/user.png'}}" alt="{{member.firstName}} {{member.lastName}}">
+          <div class="card-body">
+              <div>
+                  <strong>Location:</strong>
+                  <p>{{member.city}}, {{member.country}}, {{member.street}} {{member.building}}</p>
+              </div>
+              <div>
+                  <strong>Seniority:</strong>
+                  <p>{{member.seniority}}</p>
+              </div>
+              <div>
+                  <strong>Email:</strong>
+                  <p>{{member.email}}</p>
+              </div>
+              <div>
+                  <strong>Phone:</strong>
+                  <p>{{member.phone}}</p>
+              </div>
+          </div>
+          <div class="card-footer">
+              <div class="btn-group d-flex">
+                  <button class="btn btn-primary">Orders History</button>
+                  <button class="btn btn-success">Send Email</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-8">
+    <tabset class="member-tabset">
+      <tab heading="About {{member.userName}}">
+        <h4>Birth Date:</h4>
+        <p>{{member.dateOfBirth}}</p>
+        <h4>Registered on:</h4>
+        <p>{{member.created}}</p>
+      </tab>
+      <!-- <tab heading="Photos">
+        <img class="card-img-tab img-thumbnail" src="{{'./assets/user.png'}}" alt="{{member.firstName}} {{member.lastName}}">
+      </tab> -->
+    </tabset>
+  </div>
+</div>

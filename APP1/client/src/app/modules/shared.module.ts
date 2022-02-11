@@ -4,6 +4,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+// import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [],
@@ -19,13 +20,15 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
       preventDuplicates: true,
       countDuplicates: true,
       resetTimeoutOnDuplicate: true
-    })
+    }),
+  //  NgxSpinnerModule
   ],
   exports: [
     ToastrModule,
     TabsModule,
     NgxGalleryModule,
-    BsDropdownModule
+    BsDropdownModule,
+  //  NgxSpinnerModule
   ]
 })
 export class SharedModule { }

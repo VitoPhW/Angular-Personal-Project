@@ -1,4 +1,6 @@
+import { ItemService } from 'src/app/services/item.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-edit',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(private itemService: ItemService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
   }

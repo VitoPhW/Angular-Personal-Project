@@ -8,6 +8,11 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate{
+  /**
+   * Generall check if the website resource is accessibnle for authenticated user.
+   * @param acountService brings current authenticated user.
+   * @param toastr projects the messages in appropriate cases.
+   */
 
 constructor(
   private acountService: AccountService,
@@ -18,6 +23,7 @@ constructor(
     return this.acountService.currentUser$.pipe(
       map(user => {
         if (user)return true;
+
         this.toastr.error('You Shall Not Pass 🔥🧙‍♂️🔥');
         return false;
       })

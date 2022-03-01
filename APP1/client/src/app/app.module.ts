@@ -23,6 +23,7 @@ import { TestErrorsComponent } from './errors/test-errors/test-errors.component'
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { MemberEditComponent } from './member-edit/member-edit.component';
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MemberEditComponent } from './member-edit/member-edit.component';
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
-      MemberEditComponent
+      MemberEditComponent,
+      ProductEditComponent // perhaps should be in "products.module.ts", but now there is no ngForm error.
    ],
   imports: [
     BrowserModule,

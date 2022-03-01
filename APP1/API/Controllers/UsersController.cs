@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Extensions;
 using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -27,7 +28,7 @@ namespace API.Controllers
         [HttpPut] // user/id/*
         public async Task<ActionResult> UpdateUser(MemberUpdateDto memberUpdateDto)
         {
-            var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value; //nameid
+            var username = User.GetUsername(); //nameid
             var user = await _userRepository.GetUserByUserNameAsync(username);
             _mapper.Map(memberUpdateDto, user);
 

@@ -1,62 +1,48 @@
-<p>
-  product-edit works!
-</p>
-
-<!-- <div class="row" *ngIf="item">
+<div class="row" *ngIf="item">
   <div class="col-4">
-    <h1>Your Profile</h1>
+    <h1>Edit Product {{item.productname}}</h1>
   </div>
   <div class="col-8">
-   <div class="alert alert-info">
-     <p>
-       <strong>Information</strong>
-       You have made changes. any unsaved changes will be lost
-     </p>
-   </div>
+
+
+    <div class="alert alert-info" *ngIf="editForm.dirty">
+      <strong>Information</strong>
+      You have made changes. any unsaved changes will be lost
+    </div>
   </div>
   <div class="col-4">
-      <div class="card">
-        <img class="card-img-top img-thumbnail" src="{{'./assets/user.png'}}" alt="{{item.firstName}} {{item.lastName}}">
-        <div class="card-body">
-          <div>
-            <h4>Seniority:</h4>
-            <p>{{item.seniority}}</p>
-          </div>
-          <div>
-            <h4>Birth Date:</h4>
-            <p>{{item.dateOfBirth}}</p>
-          </div>
-          <div>
-            <h4>Registered on:</h4>
-            <p>{{item.created}}</p>
-          </div>
+    <div class="card">
+      <img class="card-img-top img-thumbnail" src="{{item.photoUrl}}" alt="{{item.productname}}">
+      <div class="card-body">
+        <div>
+          <h4>Category:</h4>
+          <p>{{item.categoryName}}</p>
         </div>
-        <div class="card-footer">
-          <button class="btn btn-success btn-block">Save Changes</button>
+        <div>
+          <h4>Price:</h4>
+          <p>{{item.unitPrice}}</p>
+        </div>
+        <div>
+          <h4>In stock:</h4>
+          <p>{{item.unitsInStock}}</p>
         </div>
       </div>
+      <div class="card-footer">
+        <button [disabled]="editForm.pristine" form="editForm" type="submit" class="btn btn-success btn-block">Save
+          Changes</button>
+      </div>
+    </div>
   </div>
+
   <div class="col-8">
     <tabset class="item-tabset">
-      <tab heading="{{item.userName}}'s details">
-        <form>
-          <h4>Email:</h4>
-          <input type="text" [(ngModel)]="item.email" name="email" class="form-control mx-2">
-          <h4 class="mt-2">Phone:</h4>
-          <input type="text" [(ngModel)]="item.phone" name="phone" class="form-control mx-2">
-          <h4 class="mt-2">Location:</h4>
-          <div class="form-inline">
-            <label class="mt-2" for="City">City:</label>
-            <input type="text" [(ngModel)]="item.city" name="city" class="form-control mx-2">
-            <label class="mt-2" for="Country">Country:</label>
-            <input type="text" [(ngModel)]="item.country" name="country" class="form-control mx-2">
-            <label class="mt-2" for="Street">Street:</label>
-            <input type="text" [(ngModel)]="item.street" name="street" class="form-control mx-2">
-            <label class="mt-2" for="Building">Building:</label>
-            <input type="text" [(ngModel)]="item.building" name="building" class="form-control mx-2">
-          </div>
+      <tab heading="{{item.productname}}'s Description">
+        <form #editForm="ngForm" (ngSubmit)="updateItem()" id="editForm">
+          <h4>Description:</h4>
+          <input type="text" [(ngModel)]="item.productDescription" name="description" class="form-control mx-2">
         </form>
       </tab>
     </tabset>
   </div>
-</div> -->
+
+</div>

@@ -6,19 +6,19 @@ import { ProductListComponent } from '../products/product-list/product-list.comp
 import { ProductDetailComponent } from '../products/product-detail/product-detail.component';
 import { ProductCardComponent } from '../products/product-card/product-card.component';
 import { ProductEditComponent } from '../products/product-edit/product-edit.component';
+import { PreventUnsavedProdEditGuard } from '../guards/prevent-unsaved-prod-edit.guard';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent, pathMatch: 'full' },
   { path: ':productname', component: ProductDetailComponent },
-  { path: ':productname/edit', component: ProductEditComponent }
+  { path: ':productname/edit', component: ProductEditComponent, canDeactivate: [PreventUnsavedProdEditGuard] }
 ]
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
-    ProductCardComponent,
-    ProductEditComponent
+    ProductCardComponent
   ],
   imports: [
     CommonModule,

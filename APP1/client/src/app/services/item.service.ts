@@ -31,4 +31,8 @@ export class ItemService {
       })
     );
   }
+
+  setMainPhoto(photoId: number, productname: string){
+    return this.http.put(`${this.baseUrl}products/set-main-photo/${productname}/${photoId}`,{});
+  }
 }

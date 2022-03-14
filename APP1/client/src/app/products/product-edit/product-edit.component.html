@@ -42,6 +42,9 @@
           <input type="text" [(ngModel)]="item.productDescription" name="description" class="form-control mx-2">
         </form>
       </tab>
+      <tab heading="Photo Editor">
+        <app-photo-editor [item]="item"></app-photo-editor>
+      </tab>
     </tabset>
   </div>
 

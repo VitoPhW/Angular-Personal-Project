@@ -7,7 +7,7 @@ import { SharedModule } from './shared.module';
     CommonModule,
     SharedModule
   ],
-  exports: [ SharedModule ],
+  exports: [SharedModule],
   declarations: []
 })
 export class CoreModule { }

@@ -31,8 +31,9 @@ namespace API.Controllers
         [HttpPut]
         public async Task<ActionResult> UpdateProduct(ProductUpdateDto productUpdateDto)
         {
-            var productname = User.GetUsername(); //nameid
-            var product = await _productRepository.GetProductByProductNameAsync(productname);
+            // var username = User.GetUsername(); //nameid
+            var productname = HttpContext.Request;
+            var product = await _productRepository.GetProductByProductNameAsync("Witt");
             _mapper.Map(productUpdateDto, product);
 
             _productRepository.Update(product);
@@ -53,7 +54,7 @@ namespace API.Controllers
             return Ok(productsToReturn);
         }
 
-        [HttpGet("{productname}")] // :id route parameter : api/Products/Witt
+        [HttpGet("{productname}", Name="GetProduct")] // :id route parameter : api/Products/Witt
         public async Task<ActionResult<ProductDto>> GetProduct(string productname)
         {
             var productToReturn = await _productRepository.GetItemAsync(productname);
@@ -85,12 +86,27 @@ namespace API.Controllers
             product.Photos.Add(photo);
 
             if (await _productRepository.SaveAllAsync())
-            { // 🔻🔻here is the issue. check in recording what this row is doing...🔻🔻
-                return CreatedAtRoute("GetUser", new { username = product.ProductName }, _mapper.Map<PhotoDto>(photo));
-                // return _mapper.Map<PhotoDto>(photo);
+            {   
+                return CreatedAtRoute("GetProduct", new { productname = product.ProductName }, _mapper.Map<PhotoDto>(photo));
+                //return _mapper.Map<PhotoDto>(photo);
             }
 
             return BadRequest("Problem adding Photos.");
+        }
+
+        [HttpPut("set-main-photo/{productname}/{photoId}")]
+        public async Task<ActionResult> SetMainPhoto(int photoId, string productname){
+            var product = await _productRepository.GetProductByProductNameAsync(productname);
+            var photo = product.Photos.FirstOrDefault(x => x.Id == photoId);
+            if(photo.isMain) return BadRequest("This is already the main phto.");
+
+            var currentMain = product.Photos.FirstOrDefault(x => x.isMain);
+            if(currentMain!=null) currentMain.isMain =false;
+
+            photo.isMain = true;
+
+            if(await _productRepository.SaveAllAsync()) return NoContent();
+            return BadRequest("Fail to set photo to main");
         }
     }
 }

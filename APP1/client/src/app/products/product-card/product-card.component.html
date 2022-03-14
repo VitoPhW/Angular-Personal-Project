@@ -6,17 +6,24 @@
         <button class="btn btn-primary btn-sm">
           <i class="fa fa-heart"></i>
         </button>
-    </li>
+      </li>
       <li class="list-inline-item">
         <button class="btn btn-primary btn-sm" routerLink="/products/{{item.productname}}">
           <i class="fa fa-info"></i>
         </button>
-    </li>
+      </li>
       <li class="list-inline-item">
         <button class="btn btn-primary btn-sm">
           <i class="fa fa-cart-plus"></i>
         </button>
-    </li>
+      </li>
+
+      <li class="list-inline-item">
+        <button class="btn btn-info btn-sm" routerLink="/products/{{item.productname}}/edit">
+          <i class="fa fa-pencil"></i>
+        </button>
+      </li>
+
     </ul>
   </div>
   <div class="card-body p-1">

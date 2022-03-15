@@ -1,6 +1,6 @@
-<div class="row" *ngIf="item">
+<div class="row" *ngIf="product">
   <div class="col-4">
-    <h1>Edit Product {{item.productname}}</h1>
+    <h1>Edit Product {{product.productname}}</h1>
   </div>
   <div class="col-8">
 
@@ -12,19 +12,19 @@
   </div>
   <div class="col-4">
     <div class="card">
-      <img class="card-img-top img-thumbnail" src="{{item.photoUrl}}" alt="{{item.productname}}">
+      <img class="card-img-top img-thumbnail" src="{{product.photoUrl}}" alt="{{product.productname}}">
       <div class="card-body">
         <div>
           <h4>Category:</h4>
-          <p>{{item.categoryName}}</p>
+          <p>{{product.categoryName}}</p>
         </div>
         <div>
           <h4>Price:</h4>
-          <p>{{item.unitPrice}}</p>
+          <p>{{product.unitPrice}}</p>
         </div>
         <div>
           <h4>In stock:</h4>
-          <p>{{item.unitsInStock}}</p>
+          <p>{{product.unitsInStock}}</p>
         </div>
       </div>
       <div class="card-footer">
@@ -36,14 +36,14 @@
 
   <div class="col-8">
     <tabset class="item-tabset">
-      <tab heading="{{item.productname}}'s Description">
-        <form #editForm="ngForm" (ngSubmit)="updateItem()" id="editForm">
+      <tab heading="{{product.productname}}'s Description">
+        <form #editForm="ngForm" (ngSubmit)="updateProduct()" id="editForm">
           <h4>Description:</h4>
-          <input type="text" [(ngModel)]="item.productDescription" name="description" class="form-control mx-2">
+          <input type="text" [(ngModel)]="product.productDescription" name="description" class="form-control mx-2">
         </form>
       </tab>
       <tab heading="Photo Editor">
-        <app-photo-editor [item]="item"></app-photo-editor>
+        <app-photo-editor [product]="product"></app-photo-editor>
       </tab>
     </tabset>
   </div>

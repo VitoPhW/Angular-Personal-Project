@@ -1,7 +1,7 @@
-import { ItemService } from 'src/app/services/item.service';
+import { ProductService } from 'src/app/services/product.service';
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IItem } from 'src/app/models/IItem';
+import { IProduct } from 'src/app/models/IProduct';
 import { ToastrService } from 'ngx-toastr';
 import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
 import { NgForm } from '@angular/forms';
@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ProductEditComponent implements OnInit {
   @ViewChild('editForm') editForm: NgForm;
-  item: IItem;
+  product: IProduct;
 
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
@@ -26,11 +26,11 @@ export class ProductEditComponent implements OnInit {
 
 
 
-  constructor(private itemService: ItemService,
+  constructor(private productService: ProductService,
     private route: ActivatedRoute, private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.loadItem();
+    this.loadProduct();
 
     // this.galleryOptions = [
     //   {
@@ -59,17 +59,17 @@ export class ProductEditComponent implements OnInit {
     // ];
   }
 
-  loadItem() {
+  loadProduct() {
     const productname = this.route.snapshot.paramMap.get('productname') as string;
-    this.itemService.getItem(productname).subscribe(item => {
-      this.item = item;
+    this.productService.getProduct(productname).subscribe(product => {
+      this.product = product;
       this.galleryImages = this.getImages();
     });
   }
 
   getImages(): NgxGalleryImage[] {
     const imgUrls: NgxGalleryImage[] = [];
-    for (const photo of this.item.photos) {
+    for (const photo of this.product.photos) {
       imgUrls.push({
         small: photo.url,
         medium: photo.url,
@@ -79,10 +79,10 @@ export class ProductEditComponent implements OnInit {
     return imgUrls;
   }
 
-  updateItem() {
-    this.itemService.updateItem(this.item).subscribe(()=>{
+  updateProduct() {
+    this.productService.updateProduct(this.product).subscribe(()=>{
       this.toastr.success("Profile updated successfully");
-      this.editForm.reset(this.item);
+      this.editForm.reset(this.product);
     });
   }
 

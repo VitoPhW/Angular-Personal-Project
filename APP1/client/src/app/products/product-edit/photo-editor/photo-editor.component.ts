@@ -3,9 +3,10 @@ import { IUser } from './../../../models/IUser';
 import { environment } from './../../../../environments/environment';
 import { Component, Input, OnInit } from '@angular/core';
 import { FileUploader, FileUploaderOptions } from 'ng2-file-upload';
-import { IItem } from 'src/app/models/IItem';
+import { IProduct } from 'src/app/models/IProduct';
 import { take } from 'rxjs/operators';
 import { Photo } from 'src/app/models/IPhoto';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-photo-editor',
@@ -13,14 +14,14 @@ import { Photo } from 'src/app/models/IPhoto';
   styleUrls: ['./photo-editor.component.css']
 })
 export class PhotoEditorComponent implements OnInit {
-  @Input() item: IItem
+  @Input() product: IProduct
 
   uploader: FileUploader;
   hasBaseDropZoneOver: boolean = false;
   baseUrl = environment.apiUrl;
   user: IUser;
 
-  constructor(private accountService: AccountService, private productsService: Product) {
+  constructor(private accountService: AccountService, private productsService: ProductService) {
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user as IUser);
   }
 
@@ -30,7 +31,7 @@ export class PhotoEditorComponent implements OnInit {
 
   initializeUploader() {
     const options: FileUploaderOptions = {
-      url: `${this.baseUrl}products/add-photo/${this.item.productname}`,
+      url: `${this.baseUrl}products/add-photo/${this.product.productname}`,
       authToken: `Bearer ${this.user.token}`,
       isHTML5: true,
       allowedFileType: ['image'],
@@ -42,10 +43,10 @@ export class PhotoEditorComponent implements OnInit {
     this.uploader.onAfterAddingFile = (file) => {
       file.withCredentials = false; // here change to admin rights only, on photo upload.
     }
-    this.uploader.onSuccessItem = (item, response, status, headers) => {
+    this.uploader.onSuccessItem = (product, response, status, headers) => {
       if (response) {
         const photo = JSON.parse(response);
-        this.item.photos.push(photo);
+        this.product.photos.push(photo);
 
       }
     }
@@ -55,8 +56,22 @@ export class PhotoEditorComponent implements OnInit {
     this.hasBaseDropZoneOver = e;
   }
 
-  setMainPhoto(photo: Photo){
-    ths/
+  setMainPhoto(photo: Photo, productName: string) {
+    this.productsService.setMainPhoto(photo.id, productName).subscribe(() => {
+      this.product.photoUrl = photo.url;
+      this.product.photos.forEach(p => p.isMain = (p.id===photo.id)
+      // {
+      //   if (p.isMain) p.isMain = false;
+      //   if (p.id === photo.id) p.isMain = true;
+      // }
+      );
+    })
+  }
+
+  deletePhoto(photoId: number, productName: string) {
+    this.productsService.deletePhoto(photoId, productName).subscribe(()=> {
+      this.product.photos = this.product.photos.filter(p => p.id !== photoId);
+    })
   }
 
 }

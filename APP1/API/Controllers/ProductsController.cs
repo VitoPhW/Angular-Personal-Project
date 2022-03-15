@@ -38,12 +38,13 @@ namespace API.Controllers
 
             _productRepository.Update(product);
 
-            if(await _productRepository.SaveAllAsync()) {
+            if (await _productRepository.SaveAllAsync())
+            {
                 return NoContent();
             }
             return BadRequest("Failed to update product");
         }
-        
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductDto>>> GetProducts()
         {
@@ -54,7 +55,7 @@ namespace API.Controllers
             return Ok(productsToReturn);
         }
 
-        [HttpGet("{productname}", Name="GetProduct")] // :id route parameter : api/Products/Witt
+        [HttpGet("{productname}", Name = "GetProduct")] // :id route parameter : api/Products/Witt
         public async Task<ActionResult<ProductDto>> GetProduct(string productname)
         {
             var productToReturn = await _productRepository.GetItemAsync(productname);
@@ -63,7 +64,7 @@ namespace API.Controllers
             // var productToReturn = _mapper.Map<ProductDto>(product);
             return productToReturn;
         }
-    
+
         [HttpPost("add-photo/{productname}")]
         public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file, string productname)
         {
@@ -86,7 +87,7 @@ namespace API.Controllers
             product.Photos.Add(photo);
 
             if (await _productRepository.SaveAllAsync())
-            {   
+            {
                 return CreatedAtRoute("GetProduct", new { productname = product.ProductName }, _mapper.Map<PhotoDto>(photo));
                 //return _mapper.Map<PhotoDto>(photo);
             }
@@ -95,18 +96,39 @@ namespace API.Controllers
         }
 
         [HttpPut("set-main-photo/{productname}/{photoId}")]
-        public async Task<ActionResult> SetMainPhoto(int photoId, string productname){
+        public async Task<ActionResult> SetMainPhoto(int photoId, string productname)
+        {
             var product = await _productRepository.GetProductByProductNameAsync(productname);
             var photo = product.Photos.FirstOrDefault(x => x.Id == photoId);
-            if(photo.isMain) return BadRequest("This is already the main phto.");
+            if (photo.isMain) return BadRequest("This is already the main phto.");
 
             var currentMain = product.Photos.FirstOrDefault(x => x.isMain);
-            if(currentMain!=null) currentMain.isMain =false;
+            if (currentMain != null) currentMain.isMain = false;
 
             photo.isMain = true;
 
-            if(await _productRepository.SaveAllAsync()) return NoContent();
+            if (await _productRepository.SaveAllAsync()) return NoContent();
             return BadRequest("Fail to set photo to main");
+        }
+        [HttpDelete("delete-photo/{productname}/{photoId}")]
+        public async Task<ActionResult> DeletePhoto(string productname, int photoId)
+        {
+            var product = await _productRepository.GetProductByProductNameAsync(productname);
+            var photo = product.Photos.FirstOrDefault(x => x.Id == photoId);
+            if (photo == null) return BadRequest("No photo found.");
+
+            if (photo.isMain) return BadRequest("U cannot delete the main photo.");
+
+            if (photo.PublicId != null)
+            {
+                var result = await _photoService.DeletePhotoAsync(photo.PublicId);
+                if (result.Error != null) return BadRequest(result.Error.Message);
+            }
+
+            product.Photos.Remove(photo);
+
+            if (await _productRepository.SaveAllAsync()) return Ok();
+            return BadRequest("Failed to delete photo");
         }
     }
 }

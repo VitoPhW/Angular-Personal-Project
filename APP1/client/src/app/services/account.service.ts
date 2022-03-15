@@ -16,6 +16,7 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   setCurrentUser(user: IUser) {
+    localStorage.setItem('user', JSON.stringify(user));
     this.currentUserSource$.next(user);
   }
 

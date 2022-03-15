@@ -1,23 +1,23 @@
-<div class="row" *ngIf="item">
+<div class="row" *ngIf="product">
   <div class="col-4">
     <div class="card">
-      <img class="card-img-top img-thumbnail" src="{{item.photoUrl || './assets/user.png'}}" alt="{{item.productname}}">
+      <img class="card-img-top img-thumbnail" src="{{product.photoUrl || './assets/user.png'}}" alt="{{product.productname}}">
       <div class="card-body">
         <div>
           <strong>Category:</strong>
-          <p>{{item.categoryName}}</p>
+          <p>{{product.categoryName}}</p>
         </div>
         <div>
           <strong>Price:</strong>
-          <p>{{item.unitPrice}}</p>
+          <p>{{product.unitPrice}}</p>
         </div>
         <div>
           <strong>Left:</strong>
-          <p>{{item.unitsInStock}}</p>
+          <p>{{product.unitsInStock}}</p>
         </div>
       </div>
       <div class="card-footer">
-        <button type="submit" class="btn btn-success btn-block" routerLink="/products/{{item.productname}}/edit">Edit profile</button>
+        <button type="submit" class="btn btn-success btn-block" routerLink="/products/{{product.productname}}/edit">Edit profile</button>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
     <tabset class="item-tabset">
       <tab heading="Description">
         <h4>Description:</h4>
-        <p>{{item.productDescription}}</p>
+        <p>{{product.productDescription}}</p>
       </tab>
       <tab heading="Photos">
         <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>

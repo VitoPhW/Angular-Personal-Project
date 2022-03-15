@@ -27,10 +27,10 @@ namespace API.Data
             .ToListAsync();
         }
 
-        public async Task<ProductDto> GetItemAsync(string productame)
+        public async Task<ProductDto> GetItemAsync(string productname)
         {
             return await _context.Product
-            .Where(x => x.ProductName == productame)
+            .Where(x => x.ProductName == productname)
             .ProjectTo<ProductDto>(_mapper.ConfigurationProvider)
             .SingleOrDefaultAsync();
         }

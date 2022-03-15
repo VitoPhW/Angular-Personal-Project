@@ -1,5 +1,5 @@
-import { ItemService } from 'src/app/services/item.service';
-import { IItem } from 'src/app/models/IItem';
+import { ProductService } from 'src/app/services/product.service';
+import { IProduct } from 'src/app/models/IProduct';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryOptions } from '@kolkov/ngx-gallery';
@@ -13,14 +13,14 @@ import { NgxGalleryAnimation } from '@kolkov/ngx-gallery';
 })
 export class ProductDetailComponent implements OnInit {
 
-  item: IItem;
+  product: IProduct;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
-  constructor(private itemService: ItemService, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.loadItem();
+    this.loadProduct();
 
     this.galleryOptions = [
       {
@@ -78,7 +78,7 @@ export class ProductDetailComponent implements OnInit {
 
   getImages(): NgxGalleryImage[] {
     const imgUrls: NgxGalleryImage[] = [];
-    for (const photo of this.item.photos) {
+    for (const photo of this.product.photos) {
       imgUrls.push({
         small: photo.url,
         medium: photo.url,
@@ -88,10 +88,10 @@ export class ProductDetailComponent implements OnInit {
     return imgUrls;
   }
 
-  loadItem() {
+  loadProduct() {
     const productname = this.route.snapshot.paramMap.get('productname') as string;
-    this.itemService.getItem(productname).subscribe(item => {
-      this.item = item;
+    this.productService.getProduct(productname).subscribe(product => {
+      this.product = product;
       this.galleryImages = this.getImages();
     });
   }

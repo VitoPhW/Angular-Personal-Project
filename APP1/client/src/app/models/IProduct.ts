@@ -1,6 +1,6 @@
 import { Photo } from "./IPhoto";
 
-export interface IItem {
+export interface IProduct {
     productID:          number;
     productname:        string;
     productDescription: string;

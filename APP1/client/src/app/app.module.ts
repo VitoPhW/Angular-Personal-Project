@@ -2,7 +2,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { MembersModule } from './modules/members.module';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,9 @@ import { TestErrorsComponent } from './errors/test-errors/test-errors.component'
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { MemberEditComponent } from './member-edit/member-edit.component';
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
+import { PhotoEditorComponent } from './products/product-edit/photo-editor/photo-editor.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { MemberEditComponent } from './member-edit/member-edit.component';
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
-      MemberEditComponent
+    MemberEditComponent,
+    ProductEditComponent, // perhaps should be in "products.module.ts", but now there is no ngForm error.
+    PhotoEditorComponent
    ],
   imports: [
     BrowserModule,

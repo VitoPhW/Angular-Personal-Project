@@ -39,4 +39,8 @@ export class ProductService {
   deletePhoto(photoId: number, productname: string){
     return this.http.delete(`${this.baseUrl}products/delete-photo/${productname}/${photoId}`);
   }
+
+  create(model: any){
+    return this.http.post<IProduct>(this.baseUrl + 'products/create', model);
+  }
 }

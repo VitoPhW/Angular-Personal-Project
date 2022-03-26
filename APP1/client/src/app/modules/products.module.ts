@@ -7,11 +7,14 @@ import { ProductDetailComponent } from '../products/product-detail/product-detai
 import { ProductCardComponent } from '../products/product-card/product-card.component';
 import { ProductEditComponent } from '../products/product-edit/product-edit.component';
 import { PreventUnsavedProdEditGuard } from '../guards/prevent-unsaved-prod-edit.guard';
+import { ProductCreateComponent } from '../products/product-create/product-create.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent, pathMatch: 'full' },
   { path: ':productname', component: ProductDetailComponent },
   { path: ':productname/edit', component: ProductEditComponent, canDeactivate: [PreventUnsavedProdEditGuard] }
+  // ,
+  // { path: '/create', component: ProductCreateComponent }
 ]
 
 @NgModule({
@@ -19,6 +22,8 @@ const routes: Routes = [
     ProductListComponent,
     ProductDetailComponent,
     ProductCardComponent
+    // ,
+    // ProductCreateComponent
   ],
   imports: [
     CommonModule,
@@ -30,6 +35,8 @@ const routes: Routes = [
     ProductListComponent,
     ProductDetailComponent,
     ProductCardComponent
+    // ,
+    // ProductCreateComponent
   ]
 })
 export class ProductsModule { }

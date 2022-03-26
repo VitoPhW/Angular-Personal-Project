@@ -28,6 +28,16 @@ namespace API.Controllers
             _productRepository = productRepository;
         }
 
+        [HttpPost("create")]
+        public async Task<ActionResult> Create(ProductCreateDto productCreateDto)
+        {
+            if(await _productRepository.ProductExists(productCreateDto.Productname)) return BadRequest("This product name already exists.");
+
+            _productRepository.Create(productCreateDto);
+
+            return Ok();
+        }
+
         [HttpPut]
         public async Task<ActionResult> UpdateProduct(ProductUpdateDto productUpdateDto)
         {

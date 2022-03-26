@@ -14,6 +14,7 @@ export class NavComponent implements OnInit {
   model: any = {};
   // loggedIn: boolean = false;
   currentUser$: Observable<IUser | null>;
+  isAdmin: boolean = false;
 
   constructor
     (private accountService: AccountService,
@@ -21,13 +22,15 @@ export class NavComponent implements OnInit {
      private toastr: ToastrService)
     {
       this.currentUser$ = this.accountService.currentUser$;
+
     }
 
   ngOnInit(): void { }
 
   login(){
     this.accountService.login(this.model)
-    .subscribe(response => {
+    .subscribe(
+      response => {
       this.router.navigateByUrl('/products');
       console.log(response);
     });

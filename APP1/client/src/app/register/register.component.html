@@ -1,31 +1,25 @@
-<form #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off">
+<form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
   <h2 class="text-center text-primary">Sign Up</h2>
   <br>
-  <div class="form-group">
-    <input
-    type="text"
-    class="form-control"
-    name="username"
-    [(ngModel)]="model.username"
-    plaseholder="Username">
-  </div>
 
-  <!-- <label>Who is your favorite user?</label> // to show the users list in dropdown -->
-  <div class="form-group">
-    <!-- <select class="form-control">
-      <option *ngFor="let user of usersFromHomeComponent" [value]="user.userName">
-        {{user.userName}}
-      </option>
-    </select> // to show the users list in dropdown -->
-    <input
-    type="password"
-    class="form-control"
-    name="password"
-    [(ngModel)]="model.password"
-    plaseholder="Password">
-  </div>
+  <app-text-input formControlName="email" label="Email"></app-text-input>
+  <app-date-input formControlName="dateOfBirth" label="Date Of Birth" [maxDate]="maxDate"></app-date-input>
+  <app-text-input formControlName="username" label="Username" autocomplete="username"></app-text-input>
+  <app-text-input formControlName="password" label="Pasword" type="password"></app-text-input>
+  <app-text-input formControlName="confirmPassword" label="Confirm Pasword" type="password"></app-text-input>
+
   <div class="form-group text-center">
-    <button class="btn btn-success mr-2" type="submit">Register</button>
+    <button [disabled]="registerForm.invalid" class="btn btn-success mr-2" type="submit">Register</button>
     <button class="btn btn-default mr-2" type="button" (click)="cancel()">Cancel</button>
   </div>
 </form>
+
+<!-- <div class="row mt-5" *ngIf="(validationErrors | async)?.length">
+  <ul class="text-danger">
+    <li *ngFor="let error of validationErrors | async">{{error}}</li>
+  </ul>
+</div> -->
+
+<!-- for form values check (in the bottom of webpage):
+<p>Form value: {{registerForm.value | json}}</p>
+<p>Form status: {{registerForm.status}}</p> -->

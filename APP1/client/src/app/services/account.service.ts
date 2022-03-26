@@ -26,8 +26,7 @@ export class AccountService {
       map((response: IUser) => {
         const user = response;
         if(user) {
-          localStorage.setItem('user', JSON.stringify(user));
-          this.currentUserSource$.next(user);
+          this.setCurrentUser(user);
         }
       })
     );
@@ -39,7 +38,7 @@ export class AccountService {
   }
 
   regiser(model: any){
-    return this.http.post<IUser>(this.baseUrl + 'accunt/register', model)
+    return this.http.post<IUser>(this.baseUrl + 'account/register', model)
     .pipe(
       map((user: IUser) => {
         if(user){

@@ -1,3 +1,4 @@
+import { ProductCreateComponent } from './products/product-create/product-create.component';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
@@ -11,7 +12,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -25,6 +26,9 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { MemberEditComponent } from './member-edit/member-edit.component';
 import { ProductEditComponent } from './products/product-edit/product-edit.component';
 import { PhotoEditorComponent } from './products/product-edit/photo-editor/photo-editor.component';
+import { TextInputComponent } from './forms/text-input/text-input.component';
+import { DateInputComponent } from './forms/date-input/date-input.component';
+
 
 
 @NgModule({
@@ -41,7 +45,10 @@ import { PhotoEditorComponent } from './products/product-edit/photo-editor/photo
     ServerErrorComponent,
     MemberEditComponent,
     ProductEditComponent, // perhaps should be in "products.module.ts", but now there is no ngForm error.
-    PhotoEditorComponent
+    PhotoEditorComponent,
+    TextInputComponent,
+    DateInputComponent,
+    ProductCreateComponent
    ],
   imports: [
     BrowserModule,
@@ -49,6 +56,7 @@ import { PhotoEditorComponent } from './products/product-edit/photo-editor/photo
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     CoreModule,
     ProductsModule,
     MembersModule

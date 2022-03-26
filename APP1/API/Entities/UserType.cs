@@ -2,9 +2,9 @@ namespace API.Entities
 {
     public enum UserType
     {
-        Admin,
-        Assistant,
         Customer,
+        Assistant,
+        Admin,
         Guest
     }
 }

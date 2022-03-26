@@ -6,5 +6,7 @@
 - Complete product-edit component (after admin member edit training).
 
 ## Current position:
-- edit-photo component | [frontend] | 2022.02.16
-- registration implementation beggining | | 2022.02.20
+- Continue | -- | -- | 2022.02.27
+- product creation add dropdown list for Category options
+- nav panel create dropdown list of [Create product, Add Category]
+- improvememnt: add option to create several products with the forms in FormArray.

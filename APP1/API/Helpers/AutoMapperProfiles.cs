@@ -26,6 +26,16 @@ namespace API.Helpers
             CreateMap<Photo, PhotoDto>();
             CreateMap<MemberUpdateDto, AppUser>();
             CreateMap<ProductUpdateDto, Product>();
+            CreateMap<ProductCreateDto, Product>();
+
+            CreateMap<RegisterDto, AppUser>();
+            // The next code could be instead of same action in AccountController.cs:
+            // .ForMember(
+            //     dest => dest.UserName,
+            //     opt => {
+            //         opt.MapFrom( src => src.Username.ToLower());
+            //     }
+            // );
 
         }
     }

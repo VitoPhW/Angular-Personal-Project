@@ -11,6 +11,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
+import { ProductCreateComponent } from './products/product-create/product-create.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,7 @@ const routes: Routes = [
         path: 'products',
         loadChildren: () => import('./modules/products.module').then(p => p.ProductsModule)
       },
-      // { path: 'products/:productname', component: ProductDetailComponent},
+      { path: 'product/create', component: ProductCreateComponent},
       { path: 'prodlists', component: ListsComponent },
       // members
       {

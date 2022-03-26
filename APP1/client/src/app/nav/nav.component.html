@@ -27,6 +27,16 @@
         </li>
       </ul>
 
+      <div class="dropdown mr-5" *ngIf="currentUser$ | async as user" dropdown>
+        <a class="dropdown-toggle text-light" dropdownToggle>Administration</a>
+
+        <div class="dropdown-menu mt-3" *dropdownMenu>
+          <a class="dropdown-item" routerLink="/product/create">Create Product</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item">Add Category</a>
+        </div>
+      </div>
+
       <div class="dropdown" *ngIf="currentUser$ | async as user" dropdown>
         <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{user.username | titlecase}}</a>
 

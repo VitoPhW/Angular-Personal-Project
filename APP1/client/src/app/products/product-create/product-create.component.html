@@ -1,0 +1,20 @@
+<form [formGroup]="createForm" (ngSubmit)="create()" autocomplete="off">
+  <h2 class="text-center text-primary">Create new product</h2>
+  <br>
+
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <app-text-input formControlName="productname" label="Product name"></app-text-input>
+      <app-text-input formControlName="productDescription" label="Product Description"></app-text-input>
+      <app-text-input formControlName="categoryName" label="Category Name"></app-text-input>
+      <app-text-input formControlName="unitPrice" label="Unit Price"></app-text-input>
+      <app-text-input formControlName="unitsInStock" label="Units In Stock"></app-text-input>
+    </div>
+  </div>
+
+
+  <div class="form-group text-center">
+    <button [disabled]="createForm.invalid" class="btn btn-success mr-2" type="submit">Create</button>
+    <button class="btn btn-default mr-2" type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>

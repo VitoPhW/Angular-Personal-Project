@@ -26,22 +26,22 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.initializeForm();
     this.maxDate = new Date();
-    this.maxDate.setFullYear(this.maxDate.getFullYear()-18);
+    this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   }
 
   register() {
     this.accountService.regiser(this.registerForm.value)
-    .subscribe(
-      response => {
-        this.router.navigate(['/products']);
-        console.log(response);
-        this.cancel();
-      },
-      error => {
-        // this.validationErrors = error;
-        // console.log(error);
-      }
-    )
+      .subscribe(
+        response => {
+          this.router.navigate(['/products']);
+          console.log(response);
+          this.cancel();
+        },
+        error => {
+          // this.validationErrors = error;
+          // console.log(error);
+        }
+      );
     console.log(this.registerForm.value);
 
   }

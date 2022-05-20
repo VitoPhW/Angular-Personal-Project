@@ -1,5 +1,6 @@
 export interface IMember {
   id:          number;
+  userType:    number;
   userName:    string;
   firstName:   string;
   lastName:    string;

@@ -350,3 +350,4 @@ MigrationBackup/
 .ionide/
 APP1/API/appsettings.json
 APP1/API/appsettings.Development.json
+APP1/client/src/assets/Products/*

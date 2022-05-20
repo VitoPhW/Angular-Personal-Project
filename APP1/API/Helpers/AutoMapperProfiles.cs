@@ -14,13 +14,14 @@ namespace API.Helpers
             .ForMember(
                 dest => dest.Seniority,
                 opt => opt.MapFrom( src => src.Created.CalculateSeniority())
+            ).ForMember(
+                dest => dest.UserType,
+                opt => opt.MapFrom( src => src.Type)
             );
             CreateMap<Product, ProductDto>()
             .ForMember(
                 dest => dest.PhotoUrl,
-                opt => {
-                    opt.MapFrom( src => src.Photos.FirstOrDefault(p => p.isMain).Url);
-                }
+                opt => { opt.MapFrom( src => src.Photos.FirstOrDefault(p => p.isMain).Url); }
             );
 
             CreateMap<Photo, PhotoDto>();

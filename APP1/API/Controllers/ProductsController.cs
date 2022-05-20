@@ -6,6 +6,7 @@ using API.Data;
 using API.DTOs;
 using API.Entities;
 using API.Extensions;
+using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -56,22 +57,24 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductDto>>> GetProducts()
+        public async Task<ActionResult<PagedList<ProductDto>>> GetProducts([FromQuery] ProductParams productParams)
         {
-            var productsToReturn = await _productRepository.GetItemsAsync();
+            var products = await _productRepository.GetProductsAsync(productParams);
+            Response.AddPaginationHeader(
+                products.CurrentPage,
+                products.PageSize,
+                products.TotalCount,
+                products.TotalPages
+                );
 
-            // var products = await _productRepository.GetProductsAsync();
-            // var productsToReturn = _mapper.Map<IEnumerable<ProductDto>>(products);
-            return Ok(productsToReturn);
+            return Ok(products);
         }
 
         [HttpGet("{productname}", Name = "GetProduct")] // :id route parameter : api/Products/Witt
         public async Task<ActionResult<ProductDto>> GetProduct(string productname)
         {
-            var productToReturn = await _productRepository.GetItemAsync(productname);
+            var productToReturn = await _productRepository.GetProductAsync(productname);
 
-            // var product = await _productRepository.GetProductByProductNameAsync(productname);
-            // var productToReturn = _mapper.Map<ProductDto>(product);
             return productToReturn;
         }
 

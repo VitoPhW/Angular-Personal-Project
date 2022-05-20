@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getUsers();
+    // this.getUsers(); //get users list for dropdown users list for example
   }
 
   registerToggle() {

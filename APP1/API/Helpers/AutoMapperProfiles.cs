@@ -28,6 +28,8 @@ namespace API.Helpers
             CreateMap<MemberUpdateDto, AppUser>();
             CreateMap<ProductUpdateDto, Product>();
             CreateMap<ProductCreateDto, Product>();
+            
+            CreateMap<Category, Category>();
 
             CreateMap<RegisterDto, AppUser>();
             // The next code could be instead of same action in AccountController.cs:

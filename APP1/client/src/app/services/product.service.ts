@@ -1,3 +1,4 @@
+import { ProductParams } from './../models/productParams';
 import { PaginatedResult } from './../models/IPagination';
 import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 import { environment } from '../../environments/environment';
@@ -13,30 +14,34 @@ export class ProductService {
 
   baseUrl = environment.apiUrl;
   product: IProduct[] = [];
-  paginatedResult: PaginatedResult<IProduct[]> = new PaginatedResult<IProduct[]>();
 
   constructor(private http: HttpClient) { }
 
-  getProducts(page?: number, itemsPerPage?: number) {
-    let params = new HttpParams();
-    if (page != null && itemsPerPage != null) {
-      params = params.append("pageNumber", page.toString());
-      params = params.append("pageSize", itemsPerPage.toString());
-    }
+  getProducts(productParams: ProductParams) {
+    let params = this.getPaginationParams(productParams);
+    params = params.append('minPrice', productParams.minPrice.toString());
+    params = params.append('maxPrice', productParams.maxPrice.toString());
+    params = params.append('category', productParams.category.toString());
 
-    return this.http.get<IProduct[]>(`${this.baseUrl}products`,
+    return this.getPaginatedResult<IProduct[]>(`${this.baseUrl}products`, params);
+  }
+
+  private getPaginatedResult<T>(url: string, params: HttpParams):Observable<PaginatedResult<T>> {
+    const paginatedResult: PaginatedResult<T> = new PaginatedResult<T>();
+
+    return this.http.get<T>(url,
       {
         observe: 'response',
         params
       }).pipe(
-        map((res: HttpResponse<IProduct[]>) => {
-          this.paginatedResult.result = res.body as IProduct[];
+        map((res: HttpResponse<T>) => {
+          paginatedResult.result = res.body as T;
           if (res.headers.get('Pagination') !== null) {
-            this.paginatedResult.pagination = JSON.parse(res.headers.get('Pagination') || '');
+            paginatedResult.pagination = JSON.parse(res.headers.get('Pagination') || '');
           }
-          return this.paginatedResult;
+          return paginatedResult;
         })
-      )
+      );
   }
 
   getProduct(productname: string): Observable<IProduct> {
@@ -62,5 +67,12 @@ export class ProductService {
 
   create(model: any) {
     return this.http.post<IProduct>(this.baseUrl + 'products/create', model);
+  }
+
+  private getPaginationParams({pageNumber, pageSize}: ProductParams){
+    let params = new HttpParams();
+    params = params.append('pageNumber', pageNumber.toString());
+    params = params.append('pageSize', pageSize.toString());
+    return params;
   }
 }

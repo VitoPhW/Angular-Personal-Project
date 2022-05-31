@@ -4,8 +4,9 @@
 - https://localhost:4200/products - is it right route name?
 - "Items" should be under "/prodlists" route.
 - Complete product-edit component (after admin member edit training).
+- Build Postman equvivalent of Dating app collection.
 - MD5
-  - add thechnical requirements: dotnet 5 server runtime, nodejs LTS, 
+  - add thechnical requirements: dotnet 5 server runtime, nodejs LTS, certificate, Postman collection 
 - add parameters to Product: for gender, size, 
 - correct focus of photo on Cloudinary, not on face, but full.
 - add possibility to edit product's Name, Category, Price, In Stock.
@@ -13,7 +14,8 @@
 
 
 ## Current position:
-- Continue | -- | 30:00+ | 2022.03.02
+- Continue | -- | 2:00 | 2022.03.06
+- build Category names
 - product creation add dropdown list for Category options, as we did for users login examples on the begining of module
 - nav panel create dropdown list of [Create product, Add Category]
 - improvememnt: add option to create several products with the forms in FormArray.

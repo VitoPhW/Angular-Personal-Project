@@ -1,8 +1,5 @@
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
-using API.Data;
 using API.DTOs;
 using API.Entities;
 using API.Extensions;
@@ -12,7 +9,6 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -39,12 +35,10 @@ namespace API.Controllers
             return Ok();
         }
 
-        [HttpPut]
-        public async Task<ActionResult> UpdateProduct(ProductUpdateDto productUpdateDto)
+        [HttpPut("{productname}")]
+        public async Task<ActionResult> UpdateProduct(ProductUpdateDto productUpdateDto, string productname)
         {
-            // var username = User.GetUsername(); //nameid
-            var productname = HttpContext.Request;
-            var product = await _productRepository.GetProductByProductNameAsync("Witt");
+            var product = await _productRepository.GetProductByProductNameAsync(productname);
             _mapper.Map(productUpdateDto, product);
 
             _productRepository.Update(product);

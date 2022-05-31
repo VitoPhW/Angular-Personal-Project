@@ -33,7 +33,21 @@ namespace API.Data
         public async Task<PagedList<ProductDto>> GetProductsAsync(ProductParams productParams)
         {
             var query = _context.Product.AsQueryable();
+            // Filter off products which not in stock.
             query = query.Where(x => x.UnitsInStock > 0);
+
+            // Filter by minimum and maximum price.
+            var minPrice = productParams.MinPrice;
+            var maxPrice = productParams.MaxPrice;
+            query = query.Where( x=>x.UnitPrice >= minPrice && x.UnitPrice <= maxPrice);
+
+            // Filter by Category name
+            if(productParams.Category != null && productParams.Category != "")
+            {
+                var category = productParams.Category;
+                query = query.Where(x=>x.CategoryName == category);
+            } 
+
 
             return await PagedList<ProductDto>.CreateAsync
             (
@@ -42,6 +56,12 @@ namespace API.Data
                 productParams.PageSize
             );
         }
+        // public async Task<IEnumerable<Product>> GetProductsAsync()
+        // {
+        //     return await _context.Product
+        //     .Include(x => x.Photos)
+        //     .ToListAsync();
+        // }
 
         public async Task<ProductDto> GetProductAsync(string productname)
         {
@@ -61,13 +81,6 @@ namespace API.Data
             return await _context.Product
             .Include(x => x.Photos)
             .SingleOrDefaultAsync(x => x.ProductName == productname);
-        }
-
-        public async Task<IEnumerable<Product>> GetProductsAsync()
-        {
-            return await _context.Product
-            .Include(x => x.Photos)
-            .ToListAsync();
         }
 
         public async Task<bool> SaveAllAsync()

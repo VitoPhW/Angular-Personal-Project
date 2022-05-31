@@ -13,9 +13,9 @@ namespace API.Helpers
             set => _pageSize = Math.Min(MaxPageSize, value); //setter
         }
         
-        // public string Category { get; set; }
-        // public int MinPrice { get; set; } = 0;
-        // public int MaxPrice { get; set; } = 9999;
+        public string Category { get; set; }
+        public int MinPrice { get; set; } = 0;
+        public int MaxPrice { get; set; } = 9999;
         
     }
 }

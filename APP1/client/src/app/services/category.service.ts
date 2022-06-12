@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ICategory } from '../models/ICategory';
 import { PaginatedResult } from '../models/IPagination';
@@ -11,11 +11,15 @@ import { PaginatedResult } from '../models/IPagination';
 export class CategoryService {
 
   baseUrl = environment.apiUrl;
+  categoriesCache: string[] = [];
 
   constructor(private http: HttpClient) { }
 
   getCategoryNames() {
-    return this.http.get<string[]>(`${this.baseUrl}category/categorynames`);
+    if(this.categoriesCache.length > 0) return of(this.categoriesCache);
+
+    return this.http.get<string[]>(`${this.baseUrl}category/categorynames`)
+    .pipe(tap(response => this.categoriesCache = response));
   }
 
   private getPaginatedResult<T>(url: string, params: HttpParams):Observable<PaginatedResult<T>> {

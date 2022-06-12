@@ -6,7 +6,7 @@ namespace API.Helpers
     {
         private const int MaxPageSize = 50;
         public int PageNumber { get; set; }
-        private int _pageSize = 6;
+        private int _pageSize = 18;
         public int PageSize
         {
             get => _pageSize; // getter
@@ -16,6 +16,7 @@ namespace API.Helpers
         public string Category { get; set; }
         public int MinPrice { get; set; } = 0;
         public int MaxPrice { get; set; } = 9999;
+        public string OrderBy { get; set; } = "category";
         
     }
 }

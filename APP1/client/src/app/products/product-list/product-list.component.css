@@ -2,6 +2,27 @@
   width: 170px;
 }
 
-select {
-  width: 130px;
+select.form-control.ml-1 {
+  width: 170px;
+  height: auto;
 }
+
+.col-2 {
+  width: 17.666667%;
+}
+
+.row {
+  justify-content: center;
+}
+
+.pagi-sort {
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+}
+
+.pagi-sort .box {
+  text-align: center;
+}
+
+
+

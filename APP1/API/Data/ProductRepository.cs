@@ -37,17 +37,20 @@ namespace API.Data
             query = query.Where(x => x.UnitsInStock > 0);
 
             // Filter by minimum and maximum price.
-            var minPrice = productParams.MinPrice;
-            var maxPrice = productParams.MaxPrice;
-            query = query.Where( x=>x.UnitPrice >= minPrice && x.UnitPrice <= maxPrice);
+            query = query.Where( x=>x.UnitPrice >= productParams.MinPrice && x.UnitPrice <= productParams.MaxPrice);
 
             // Filter by Category name
             if(productParams.Category != null && productParams.Category != "")
-            {
-                var category = productParams.Category;
-                query = query.Where(x=>x.CategoryName == category);
-            } 
+                query = query.Where(x=>x.CategoryName == productParams.Category);
 
+            query = productParams.OrderBy switch
+            {
+                "category" => query.OrderBy(x=>x.CategoryName.ToLower()),
+                "productname" => query.OrderBy(x=>x.ProductName.ToLower()),
+                "price" => query.OrderBy(x=>x.UnitPrice),
+                "instock" => query.OrderByDescending(x=>x.UnitsInStock),
+                _ => query.OrderBy(x=>x.CategoryName.ToLower())
+            };
 
             return await PagedList<ProductDto>.CreateAsync
             (
@@ -56,13 +59,7 @@ namespace API.Data
                 productParams.PageSize
             );
         }
-        // public async Task<IEnumerable<Product>> GetProductsAsync()
-        // {
-        //     return await _context.Product
-        //     .Include(x => x.Photos)
-        //     .ToListAsync();
-        // }
-
+        
         public async Task<ProductDto> GetProductAsync(string productname)
         {
             return await _context.Product

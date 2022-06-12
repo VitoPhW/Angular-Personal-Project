@@ -6,6 +6,7 @@ import { IPagination } from 'src/app/models/IPagination';
 import { IProduct } from 'src/app/models/IProduct';
 import { ProductService } from 'src/app/services/product.service';
 import { CategoryService } from 'src/app/services/category.service';
+import { IUser } from 'src/app/models/IUser';
 
 type OptionsArray = {value: string, display: string};
 
@@ -18,23 +19,11 @@ export class ProductListComponent implements OnInit {
 
   products: IProduct[] = [];
   pagination: IPagination;
-  productParams: ProductParams;
-  client: AccountService;
   categories: OptionsArray[] = [];
+  productParams: ProductParams;
 
-  constructor(private productService: ProductService, private accountService: AccountService, private categoryService: CategoryService) {
-    accountService.currentUser$ // runs in sync mode, because of currentUser$ is created localy, but not on server.
-    .pipe(take(1))
-    .subscribe(
-      (client: any) => {
-        this.client = client;
-        this.productParams = new ProductParams();
-        // this.productParams.pageNumber = 1;
-        // this.productParams.pageSize = 5;
-        // this.productParams.minPrice = 0;
-        // this.productParams.maxPrice = 3425;
-      }
-    )
+  constructor(private productService: ProductService, private categoryService: CategoryService) {
+    this.productParams = this.productService.ProductParams;
   }
 
   ngOnInit(): void {
@@ -43,6 +32,7 @@ export class ProductListComponent implements OnInit {
   }
 
   loadProducts() {
+    this.productService.ProductParams = this.productParams;
     this.productService.getProducts(this.productParams).subscribe(
       res => {
         this.products = res.result;
@@ -50,13 +40,15 @@ export class ProductListComponent implements OnInit {
       }
     )
   }
+
   pageChanged({page}: any ) {
     this.productParams.pageNumber = page;
+    this.productService.ProductParams = this.productParams;
     this.loadProducts();
   }
 
   resetFilters() {
-    this.productParams = new ProductParams();
+    this.productParams = this.productService.resetProductParams();
     this.loadProducts();
   }
 
@@ -71,8 +63,6 @@ export class ProductListComponent implements OnInit {
       });
     }, error => {
       console.log('Failed to transfer categories', error);
-    }, () => {
-      console.log('Categories transfer complete');
     });
   }
 

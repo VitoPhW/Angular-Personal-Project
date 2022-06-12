@@ -28,6 +28,7 @@ import { ProductEditComponent } from './products/product-edit/product-edit.compo
 import { PhotoEditorComponent } from './products/product-edit/photo-editor/photo-editor.component';
 import { TextInputComponent } from './forms/text-input/text-input.component';
 import { DateInputComponent } from './forms/date-input/date-input.component';
+import { DropdownComponent } from './forms/dropdown/dropdown.component';
 
 
 
@@ -48,7 +49,8 @@ import { DateInputComponent } from './forms/date-input/date-input.component';
     PhotoEditorComponent,
     TextInputComponent,
     DateInputComponent,
-    ProductCreateComponent
+    ProductCreateComponent,
+    DropdownComponent
    ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<div class="form-group">
+
+  <select
+  [class.is-invalid] ="ngControl?.errors && ngControl?.touched"
+  class="form-control"
+  [formControl]="$any(ngControl.control)"
+  size>
+
+  <option value="" selected disabled label="{{label}}"></option>
+  <option *ngFor="let category of categories" [value]="category.value">{{category.display}}</option>
+</select>
+
+<div *ngIf="ngControl.control?.errors?.['required']" class="invalid-feedback">Please choose a {{label}}</div>
+
+</div>

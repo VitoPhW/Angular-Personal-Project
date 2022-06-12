@@ -1,8 +1,10 @@
+import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+type OptionsArray = {value: string, display: string};
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
@@ -12,15 +14,18 @@ export class ProductCreateComponent implements OnInit {
 
   @Output() cancelCreate = new EventEmitter<boolean>();
   createForm: FormGroup;
+  categories: OptionsArray[] = [];
 
   constructor(
     private productService: ProductService,
+    private categoryService: CategoryService,
     private fb: FormBuilder,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     this.initializeForm();
+    this.getCategories();
   }
 
   create() {
@@ -40,9 +45,23 @@ export class ProductCreateComponent implements OnInit {
     this.createForm = this.fb.group({
       productname: ['', Validators.required],
       productDescription:['', Validators.required],
-      categoryName: ['', Validators.required],
-      unitPrice: ['', Validators.required],
-      unitsInStock: ['', Validators.required]
+      categoryName: ['', [Validators.required]],
+      unitPrice: ['', Validators.required, Validators.min(0)],
+      unitsInStock: ['', Validators.required, Validators.min(0)]
+    });
+  }
+
+  getCategories() {
+    this.categoryService.getCategoryNames().subscribe(response => {
+      response.forEach(
+        element => {
+          this.categories.push({
+            value: element,
+            display: element
+          });
+      });
+    }, error => {
+      console.log('Failed to transfer categories', error);
     });
   }
 

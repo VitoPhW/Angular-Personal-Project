@@ -6,9 +6,9 @@
     <div class="col-4">
       <app-text-input formControlName="productname" label="Product name"></app-text-input>
       <app-text-input formControlName="productDescription" label="Product Description"></app-text-input>
-      <app-text-input formControlName="categoryName" label="Category Name"></app-text-input>
-      <app-text-input formControlName="unitPrice" label="Unit Price"></app-text-input>
-      <app-text-input formControlName="unitsInStock" label="Units In Stock"></app-text-input>
+      <app-dropdown formControlName="categoryName" label="Category" [categories]="categories"></app-dropdown>
+      <app-text-input formControlName="unitPrice" label="Unit Price" type="number"></app-text-input>
+      <app-text-input formControlName="unitsInStock" label="Units In Stock" type="number" pattern="[0-9]"></app-text-input>
     </div>
   </div>
 

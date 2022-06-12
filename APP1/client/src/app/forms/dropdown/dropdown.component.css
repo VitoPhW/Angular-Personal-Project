@@ -1,0 +1,10 @@
+select:hover {
+  cursor: pointer;
+}
+option:hover {
+  cursor: pointer;
+}
+
+select {
+  color: #97a0a4;
+}

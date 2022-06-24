@@ -1,12 +1,9 @@
-import { take } from 'rxjs';
-import { AccountService } from './../../services/account.service';
 import { ProductParams } from './../../models/productParams';
 import { Component, OnInit } from '@angular/core';
 import { IPagination } from 'src/app/models/IPagination';
 import { IProduct } from 'src/app/models/IProduct';
 import { ProductService } from 'src/app/services/product.service';
 import { CategoryService } from 'src/app/services/category.service';
-import { IUser } from 'src/app/models/IUser';
 
 type OptionsArray = {value: string, display: string};
 

@@ -9,4 +9,5 @@ export interface IProduct {
     unitPrice:          number;
     unitsInStock:       number;
     photos:             Photo[];
+    isLiked:            boolean;
 }

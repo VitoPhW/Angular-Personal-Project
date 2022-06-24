@@ -23,6 +23,10 @@ namespace API.Helpers
                 dest => dest.PhotoUrl,
                 opt => { opt.MapFrom( src => src.Photos.FirstOrDefault(p => p.isMain).Url); }
             );
+            // .ForMember(
+            //     dest => dest.isLiked,
+            //     opt => { opt.MapFrom( src => src.LikedBy.Select(p => p.UserId).Contains())}
+            // );
 
             CreateMap<Photo, PhotoDto>();
             CreateMap<MemberUpdateDto, AppUser>();

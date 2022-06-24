@@ -18,8 +18,10 @@ namespace API.Controllers
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
         private readonly IPhotoService _photoService;
-        public ProductsController(IProductRepository productRepository, IMapper mapper, IPhotoService photoService)
+        private readonly ILikeRepository _likeRepository;
+        public ProductsController(IProductRepository productRepository, IMapper mapper, IPhotoService photoService, ILikeRepository likeRepository)
         {
+            _likeRepository = likeRepository;
             _photoService = photoService;
             _mapper = mapper;
             _productRepository = productRepository;
@@ -28,7 +30,7 @@ namespace API.Controllers
         [HttpPost("create")]
         public async Task<ActionResult> Create(ProductCreateDto productCreateDto)
         {
-            if(await _productRepository.ProductExists(productCreateDto.Productname)) return BadRequest("This product name already exists.");
+            if (await _productRepository.ProductExists(productCreateDto.Productname)) return BadRequest("This product name already exists.");
 
             _productRepository.Create(productCreateDto);
 
@@ -54,12 +56,19 @@ namespace API.Controllers
         public async Task<ActionResult<PagedList<ProductDto>>> GetProducts([FromQuery] ProductParams productParams)
         {
             var products = await _productRepository.GetProductsAsync(productParams);
+            var userId = User.GetUserId();
+
             Response.AddPaginationHeader(
                 products.CurrentPage,
                 products.PageSize,
                 products.TotalCount,
                 products.TotalPages
                 );
+
+            foreach (var product in products)
+            {
+                product.isLiked = await _likeRepository.GetProductLike(userId, product.ProductID) != null;
+            }
 
             return Ok(products);
         }

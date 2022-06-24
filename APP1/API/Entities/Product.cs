@@ -30,5 +30,7 @@ namespace API.Entities
         // [DataType(DataType.ImageUrl)]
         // #nullable enable
         // public string? Image { get; set; }
+
+        public ICollection<ProductLike> LikedBy { get; set; } = new List<ProductLike>();
     }
 }

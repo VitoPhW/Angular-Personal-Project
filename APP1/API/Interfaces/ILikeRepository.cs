@@ -1,0 +1,16 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using API.DTOs;
+using API.Entities;
+using API.Helpers;
+
+namespace API.Interfaces
+{
+    public interface ILikeRepository
+    {
+         Task<ProductLike> GetProductLike(int userId, int productId);
+         Task<AppUser> GetUserWithLikes(int userId);
+         Task<PagedList<ProductDto>> GetProductsLikedByUser(LikesParams likesParams);
+         Task<IEnumerable<MemberLikeDto>> GetProductLikes(int productId);
+    }
+}

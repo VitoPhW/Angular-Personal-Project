@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 import { IProduct } from '../models/IProduct';
 import { map, Observable, of, take, tap } from 'rxjs';
 import { IUser } from '../models/IUser';
+import { IMember } from '../models/IMember';
 
 
 @Injectable({
@@ -117,5 +118,17 @@ export class ProductService {
     params = params.append('pageNumber', pageNumber.toString());
     params = params.append('pageSize', pageSize.toString());
     return params;
+  }
+
+  getLikes(productname: string){
+    return this.http.get<Partial<IMember>[]>(`${this.baseUrl}likes/${productname}`);
+  }
+
+  addLike(productname: string) {
+    return this.http.put(`${this.baseUrl}likes/addlike/${productname}`,{});
+  }
+
+  removeLike(productname: string) {
+    return this.http.put(`${this.baseUrl}likes/removelike/${productname}`,{});
   }
 }

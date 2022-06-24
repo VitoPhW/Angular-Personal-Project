@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,9 +11,14 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { ProductCardComponent } from '../products/product-card/product-card.component';
+import { MemberCardComponent } from '../members/member-card/member-card.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ProductCardComponent,
+    MemberCardComponent
+  ],
   imports: [
     CommonModule,
     NgxGalleryModule,
@@ -30,7 +36,9 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     NgxSpinnerModule,
     FileUploadModule,
     ButtonsModule.forRoot(),
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    FormsModule,
+    RouterModule
   ],
   exports: [
     ToastrModule,
@@ -42,7 +50,9 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     FileUploadModule,
     FormsModule,
     ButtonsModule,
-    PaginationModule
+    PaginationModule,
+    ProductCardComponent,
+    MemberCardComponent
   ]
 })
 export class SharedModule { }

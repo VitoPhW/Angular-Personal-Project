@@ -13,6 +13,7 @@ namespace API.DTOs
         public float UnitPrice { get; set; }
         public int UnitsInStock { get; set; }
         public ICollection<PhotoDto> Photos { get; set; }
+        public bool isLiked { get; set; }
 
     }
 }

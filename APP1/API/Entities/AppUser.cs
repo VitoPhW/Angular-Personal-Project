@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using API.Extensions;
@@ -36,5 +37,6 @@ namespace API.Entities
         public string Street { get; set; }
         public int Building { get; set; }
         public int Appartment { get; set; }
+        public ICollection<ProductLike> LikedProduct { get; set; }
     }
 }

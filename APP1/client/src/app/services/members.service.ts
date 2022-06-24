@@ -1,3 +1,5 @@
+import { LikedProductsParams } from './../models/likedProductsParams';
+import { IProduct } from 'src/app/models/IProduct';
 import { MemberParams } from './../models/memberParams';
 import { environment } from './../../environments/environment';
 import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
@@ -17,8 +19,11 @@ export class MembersService {
   paginatedResult: PaginatedResult<IMember[]> = new PaginatedResult<IMember[]>();
   memberCache = new Map<string, PaginatedResult<IMember[]>>();
   memberParams: MemberParams;
+  likedProductsParams: LikedProductsParams
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.likedProductsParams = new LikedProductsParams();
+   }
 
   public get MemberParams() : MemberParams {
     return this.memberParams;
@@ -38,10 +43,17 @@ export class MembersService {
     const response = this.memberCache.get(cacheKey);
     if(response) return of(response);
 
-    let params = this.getPaginationParams(memberParams);
+    let params = this.getPaginationParams(memberParams.pageNumber, memberParams.pageSize);
 
     return this.getPaginatedResult<IMember[]>(`${this.baseUrl}users`, params)
     .pipe(tap(response => this.memberCache.set(cacheKey, response)));
+  }
+
+  getLikes(username: string, pageNumber: number, pageSize: number) {
+    let params = this.getPaginationParams(pageNumber, pageSize)
+    params = params.append('username', username);
+
+    return this.getPaginatedResult<Partial<IProduct[]>>(`${this.baseUrl}likes`, params);
   }
 
   private getPaginatedResult<T>(url: string, params: HttpParams):Observable<PaginatedResult<T>> {
@@ -62,7 +74,7 @@ export class MembersService {
       );
   }
 
-  private getPaginationParams({pageNumber, pageSize}: MemberParams){
+  private getPaginationParams(pageNumber:number, pageSize:number){
     let params = new HttpParams();
     params = params.append('pageNumber', pageNumber.toString());
     params = params.append('pageSize', pageSize.toString());

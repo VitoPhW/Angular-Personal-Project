@@ -22,3 +22,7 @@
 ::ng-deep .nav-link.active {
   font-weight: 800;
 }
+
+div.tab-content  {
+  background-color: black;
+}

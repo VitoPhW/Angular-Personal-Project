@@ -14,9 +14,9 @@ namespace API.Helpers
             .ForMember(
                 dest => dest.Seniority,
                 opt => opt.MapFrom( src => src.Created.CalculateSeniority())
-            ).ForMember(
-                dest => dest.UserType,
-                opt => opt.MapFrom( src => src.Type)
+            // ).ForMember(
+            //     dest => dest.UserType,
+            //     opt => opt.MapFrom( src => src.Type)
             );
             CreateMap<Product, ProductDto>()
             .ForMember(

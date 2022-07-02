@@ -1,14 +1,24 @@
 using API.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<
+        AppUser,
+        AppRole,
+        int,
+        IdentityUserClaim<int>, 
+        AppUserRole,
+        IdentityUserLogin<int>, 
+        IdentityRoleClaim<int>, 
+        IdentityUserToken<int>
+        >
     {
         public DataContext(DbContextOptions options) : base(options)
         {
         }
-        public DbSet<AppUser> Users { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<ProductLike> Likes { get; set; }
@@ -29,6 +39,18 @@ namespace API.Data
             .WithMany(p => p.LikedBy)
             .HasForeignKey(p => p.ProductId)
             .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<AppUser>()
+                .HasMany(ur => ur.UserRoles)
+                .WithOne(aur => aur.User)
+                .HasForeignKey(aur => aur.UserId)
+                .IsRequired();
+
+            builder.Entity<AppRole>()
+                .HasMany(ur => ur.UserRoles)
+                .WithOne(aur => aur.Role)
+                .HasForeignKey(aur => aur.RoleId)
+                .IsRequired();
         }
     }
 }

@@ -1,12 +1,6 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary">
   <div class="container">
     <a class="navbar-brand" routerLink="/">Eco-Friendly Fashion Store</a>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-
-    <!-- <div class="collapse navbar-collapse" id="navbarsExample07"> -->
-      <!-- <ul *ngIf="currentUser$ | async" class="navbar-nav mr-auto"> -->
       <ul class="navbar-nav mr-auto">
 
         <ng-container *ngIf="currentUser$ | async">
@@ -31,6 +25,8 @@
         <a class="dropdown-toggle text-light" dropdownToggle>Administration</a>
 
         <div class="dropdown-menu mt-3" *dropdownMenu>
+          <a *appHasRole="['Admin', 'Assistant']" class="dropdown-item" routerLink="/admin">Admin</a>
+          <div *appHasRole="['Admin', 'Assistant']" class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink="/members">Accounts</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink="/product/create">Create Product</a>
@@ -54,7 +50,7 @@
       <form *ngIf="!(currentUser$ | async)" #loginForm="ngForm" class="form-inline my-2 my-md-0" (ngSubmit)="login()" autocomplete="off">
         <input name="username" [(ngModel)]="model.username" class="form-control mr-sm-2" type="text" placeholder="Username">
         <input name="password" [(ngModel)]="model.password" class="form-control mr-sm-2" type="password" placeholder="Password">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Login</button>
       </form>
     <!-- </div> -->
   </div>

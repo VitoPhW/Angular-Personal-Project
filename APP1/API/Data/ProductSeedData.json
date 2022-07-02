@@ -2,65 +2,240 @@
   {
     "ProductName": "Sanchez",
     "ProductDescription": "Proident aliqua minim et consequat nulla officia culpa laborum. Commodo sunt enim irure id incididunt deserunt exercitation enim sint.",
-    "CategoryName": "Recritube",
+    "CategoryName": "Blouse",
     "UnitPrice": 152.59,
     "UnitsInStock": 90,
     "Photos": [
       {
         "isMain": true,
-        "Url": "https://picsum.photos/205/350.jpg"
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1654534399/oeesv4froz93sechoy6n.jpg"
       }
     ]
   },
   {
     "ProductName": "Parsons",
     "ProductDescription": "Commodo non Lorem Lorem enim aliquip proident do reprehenderit velit veniam elit eiusmod sunt incididunt. Fugiat labore culpa sunt cupidatat est tempor laboris dolore tempor.",
-    "CategoryName": "Ginkogene",
+    "CategoryName": "Blouse",
     "UnitPrice": 863.4,
     "UnitsInStock": 8,
     "Photos": [
       {
         "isMain": true,
-        "Url": "https://picsum.photos/225/241.jpg"
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1654532955/qt3xmf3d3s9qeigw0zxf.jpg"
       }
     ]
   },
   {
     "ProductName": "Calhoun",
     "ProductDescription": "Ipsum cupidatat voluptate eiusmod sunt officia veniam veniam nisi aliquip. Ipsum et voluptate ad non reprehenderit sunt aute cillum sunt nostrud sint ex et.",
-    "CategoryName": "Bristo",
+    "CategoryName": "Mask",
     "UnitPrice": 104.06,
     "UnitsInStock": 112,
     "Photos": [
       {
         "isMain": true,
-        "Url": "https://picsum.photos/338/353.jpg"
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1654096754/ik6sstsdizujjkpayviv.jpg"
       }
     ]
   },
   {
     "ProductName": "Witt",
     "ProductDescription": "Qui consequat dolor sunt ullamco duis pariatur id nisi in laboris. Reprehenderit qui quis tempor mollit.",
-    "CategoryName": "Manufact",
+    "CategoryName": "Shirt",
     "UnitPrice": 812.03,
     "UnitsInStock": 136,
     "Photos": [
       {
         "isMain": true,
-        "Url": "https://picsum.photos/333/276.jpg"
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653031692/z32xbmwvttdhsqltbsub.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653031700/r7no7dlxv16nxrr7yeko.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653031698/nogw9ff45pqjv4terfaj.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653031696/wz13ledgopmdstzb7fdu.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653031694/tvlmer9os1g7xmlclhpb.jpg"
+      }
+    ]
+  },
+  {
+    "ProductName": "Witt2",
+    "ProductDescription": "Qui consequat dolor sunt ullamco duis pariatur id nisi in laboris. Reprehenderit qui quis tempor mollit.",
+    "CategoryName": "Shirt",
+    "UnitPrice": 812.03,
+    "UnitsInStock": 136,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028156/w5ljltn2dpi8voozdc4h.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028158/p0a2jefs3pofzkqve657.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028153/mopndj8anlfxvzzbyhcp.jpg"
+      }
+    ]
+  },
+  {
+    "ProductName": "Witt3",
+    "ProductDescription": "Qui consequat dolor sunt ullamco duis pariatur id nisi in laboris. Reprehenderit qui quis tempor mollit.",
+    "CategoryName": "Shirt",
+    "UnitPrice": 812.03,
+    "UnitsInStock": 136,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653027969/ykvydevtoz4void1m7yp.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028022/z7bdch5m2wivawzggykz.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028020/ekzsbcpfkpvb4esn0hg2.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028018/jwkl58sslhoyzosnnqbg.jpg"
+      }
+    ]
+  },
+  {
+    "ProductName": "Dress1",
+    "ProductDescription": "Qui consequat dolor sunt ullamco duis pariatur id nisi in laboris. Reprehenderit qui quis tempor mollit.",
+    "CategoryName": "Hat",
+    "UnitPrice": 812.03,
+    "UnitsInStock": 136,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028403/ulqv7f7pev0azwyqik6f.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028400/g1vbakmhii0f9fnddudl.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028398/tyzy1bg0nt9jlhupyjcm.jpg"
+      }
+    ]
+  },
+  {
+    "ProductName": "Dress2",
+    "ProductDescription": "Qui consequat dolor sunt ullamco duis pariatur id nisi in laboris. Reprehenderit qui quis tempor mollit.",
+    "CategoryName": "Blouse",
+    "UnitPrice": 812.03,
+    "UnitsInStock": 136,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028359/oczdu287b2tqfdglxmn8.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028361/oechvvejjplo9pgomhwr.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028363/abrob6x7yqwowf56ndyb.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028356/dxq4mu6gdk6buuvkmncb.jpg"
+      }
+    ]
+  },
+  {
+    "ProductName": "Dress3",
+    "ProductDescription": "Qui consequat dolor sunt ullamco duis pariatur id nisi in laboris. Reprehenderit qui quis tempor mollit.",
+    "CategoryName": "Dress",
+    "UnitPrice": 812.03,
+    "UnitsInStock": 136,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028280/frpormn5wocjpolbokwa.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028278/xurvfhmlgunptlgwabrk.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028282/hh3u1z3jfbxjdchd2ejf.jpg"
+      }
+    ]
+  },
+  {
+    "ProductName": "Dress white",
+    "ProductDescription": "Qui consequat dolor sunt ullamco duis pariatur id nisi in laboris. Reprehenderit qui quis tempor mollit.",
+    "CategoryName": "Dress",
+    "UnitPrice": 812.03,
+    "UnitsInStock": 136,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028091/irgotknzjaoq8rwig2i7.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028093/f6xcbnfgu6faebruyi5c.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028096/uvxn72eqtntbyhg2fdwu.jpg"
+      }
+    ]
+  },
+  {
+    "ProductName": "Dress4",
+    "ProductDescription": "Qui consequat dolor sunt ullamco duis pariatur id nisi in laboris. Reprehenderit qui quis tempor mollit.",
+    "CategoryName": "Dress",
+    "UnitPrice": 812.03,
+    "UnitsInStock": 136,
+    "Photos": [
+      {
+        "isMain": true,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028186/zuaz2uorxn6o6dh17xk9.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028188/rqn9ngpyepu26dwwlf1r.jpg"
       }
     ]
   },
   {
     "ProductName": "Barnett",
     "ProductDescription": "Dolor exercitation minim veniam elit mollit ea sunt anim dolor fugiat reprehenderit nulla do. Enim est cillum ad do exercitation est id nisi.",
-    "CategoryName": "Bristo",
+    "CategoryName": "Blouse",
     "UnitPrice": 887.42,
     "UnitsInStock": 24,
     "Photos": [
       {
         "isMain": true,
-        "Url": "https://picsum.photos/362/210.jpg"
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028241/osbyg6fjnzoxpwqdpcja.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028239/poqmt4da9anj0loqj8ij.jpg"
+      },
+      {
+        "isMain": false,
+        "Url": "https://res.cloudinary.com/eco-fashion/image/upload/v1653028236/yzmoik7nlvnrx04miutp.jpg"
       }
     ]
   }

@@ -15,7 +15,7 @@ export class JwtInterceptor implements HttpInterceptor {
   constructor(private account: AccountService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    let currentUser: IUser = {token:'', username:''};
+    let currentUser: IUser = {token:'', username:'', roles:[]};
 
     this.account.currentUser$.pipe(take(1)).subscribe((user: IUser | null) => { if(user) currentUser = user });
     if (currentUser.token) {

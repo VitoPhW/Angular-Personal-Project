@@ -13,6 +13,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { ProductCardComponent } from '../products/product-card/product-card.component';
 import { MemberCardComponent } from '../members/member-card/member-card.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MemberCardComponent } from '../members/member-card/member-card.componen
     ButtonsModule.forRoot(),
     PaginationModule.forRoot(),
     FormsModule,
-    RouterModule
+    RouterModule,
+    ModalModule.forRoot()
   ],
   exports: [
     ToastrModule,
@@ -52,7 +54,8 @@ import { MemberCardComponent } from '../members/member-card/member-card.componen
     ButtonsModule,
     PaginationModule,
     ProductCardComponent,
-    MemberCardComponent
+    MemberCardComponent,
+    ModalModule
   ]
 })
 export class SharedModule { }

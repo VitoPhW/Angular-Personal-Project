@@ -1,3 +1,5 @@
+import { AdminGuard } from './guards/admin.guard';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.guard';
 import { MemberEditComponent } from './member-edit/member-edit.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
@@ -36,9 +38,13 @@ const routes: Routes = [
         path: 'members',
         loadChildren: () => import('./modules/members.module').then(m => m.MembersModule)
       },
-      //{ path: 'members/:id', component: MemberDetailComponent},
       // member (my profile)
-      { path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]}
+      { path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
+
+      { path: 'admin',
+      loadChildren: () => import('./modules/admin.module').then(p => p.AdminModule),
+      canActivate: [AdminGuard]
+      }
     ]
   },
   { path: 'about', component: AboutComponent },

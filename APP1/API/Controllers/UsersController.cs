@@ -55,7 +55,7 @@ namespace API.Controllers
             return Ok(members);
         }
 
-        [HttpGet("{username}")] // :id route parameter : api/users/lisa
+        [HttpGet("{username}")] // :id route parameter : api/users/angie
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
             var userToReturn = await _userRepository.GetMemberAsync(username);

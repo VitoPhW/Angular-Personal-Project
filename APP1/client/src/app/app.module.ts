@@ -1,3 +1,4 @@
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { ProductCreateComponent } from './products/product-create/product-create.component';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
@@ -29,6 +30,8 @@ import { PhotoEditorComponent } from './products/product-edit/photo-editor/photo
 import { TextInputComponent } from './forms/text-input/text-input.component';
 import { DateInputComponent } from './forms/date-input/date-input.component';
 import { DropdownComponent } from './forms/dropdown/dropdown.component';
+import { AdminModule } from './modules/admin.module';
+import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 
 
 
@@ -50,7 +53,8 @@ import { DropdownComponent } from './forms/dropdown/dropdown.component';
     TextInputComponent,
     DateInputComponent,
     ProductCreateComponent,
-    DropdownComponent
+    DropdownComponent,
+    RolesModalComponent
    ],
   imports: [
     BrowserModule,
@@ -61,7 +65,8 @@ import { DropdownComponent } from './forms/dropdown/dropdown.component';
     ReactiveFormsModule,
     CoreModule,
     ProductsModule,
-    MembersModule
+    MembersModule,
+    AdminModule
   ],
   providers: [
     {

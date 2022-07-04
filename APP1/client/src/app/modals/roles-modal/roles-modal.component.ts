@@ -9,7 +9,7 @@ import { IUser } from 'src/app/models/IUser';
 })
 export class RolesModalComponent implements OnInit {
 
-  updateSeelectedRoles = new EventEmitter();
+  updateSelectedRoles = new EventEmitter();
   user: IUser;
   roles: any[];
 
@@ -19,7 +19,7 @@ export class RolesModalComponent implements OnInit {
   }
 
   updateRoles() {
-    this.updateSeelectedRoles.emit(this.roles);
+    this.updateSelectedRoles.emit(this.roles);
     this.bsModalRef.hide();
 
   }

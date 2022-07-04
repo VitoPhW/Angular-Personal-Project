@@ -26,7 +26,6 @@ export class UserManagementComponent implements OnInit {
   getUserWithRoles() {
     this.adminService.getUsersWithRoles().subscribe((users: Partial<IUser[]>)=> {
       this.users = users;
-      console.log(users);
     });
   }
 
@@ -34,8 +33,7 @@ export class UserManagementComponent implements OnInit {
     const config  = {
       class: 'modal-dialog-centered',
       initialState: {
-        username: user.username,
-        token: user.token,
+        user,
         roles: this.getRolesArray(user),
       }
     };
@@ -43,6 +41,7 @@ export class UserManagementComponent implements OnInit {
     this.bsModalRef = this.modalService.show(RolesModalComponent, config);
     this.bsModalRef.content.updateSelectedRoles.subscribe((values: any[]) => {
       const roleValues = values.filter(el => el.checked).map(el => el.name);
+
       if (roleValues.length) {
         this.adminService.updateUserRoles(user.username, roleValues).subscribe(() => {
           user.roles = roleValues;

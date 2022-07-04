@@ -22,16 +22,16 @@
 - Product details: likes are not loading on refresh
 - Membed details:  likes are not loading on refresh
 - Admin: make one page with toggle of create Product and create Category
+- Admin: complete Product Management tab, under Admin
 - "Items" should be under "/prodlists" route.
 - correct focus of photo on Cloudinary, not on face, but full.
 - cards can be clickable on the picture
 - remove lists component
 - when click on the site name, route to store
 
-- implement Microsoft Identity
-  x AdminController - cannot receive role names in function "GetUsersWithRoles"
 - build "cart" processes
 - build orders history view
+- Publish
 
 ## Current position:
 - Continue | -- | 2:42+ | 2022.03.09

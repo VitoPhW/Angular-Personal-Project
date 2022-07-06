@@ -29,7 +29,6 @@ namespace API.Data
             _context.Product.Add(product);
             await _context.SaveChangesAsync();
         }
-
         public async Task<PagedList<ProductDto>> GetProductsAsync(ProductParams productParams)
         {
             var query = _context.Product.AsQueryable();
@@ -59,7 +58,6 @@ namespace API.Data
                 productParams.PageSize
             );
         }
-        
         public async Task<ProductDto> GetProductAsync(string productname)
         {
             return await _context.Product
@@ -67,29 +65,20 @@ namespace API.Data
             .ProjectTo<ProductDto>(_mapper.ConfigurationProvider)
             .SingleOrDefaultAsync();
         }
-
         public async Task<Product> GetProductByIdAsync(int id)
         {
             return await _context.Product.FindAsync(id);
         }
-
         public async Task<Product> GetProductByProductNameAsync(string productname)
         {
             return await _context.Product
             .Include(x => x.Photos)
             .SingleOrDefaultAsync(x => x.ProductName == productname);
         }
-
-        public async Task<bool> SaveAllAsync()
-        {
-            return await _context.SaveChangesAsync() > 0;
-        }
-
         public void Update(Product product)
         {
             _context.Entry<Product>(product).State = EntityState.Modified;
         }
-
         public async Task<bool> ProductExists(string productname)
         {
             return await _context.Product.AnyAsync(x => x.ProductName.ToLower() == productname.ToLower());

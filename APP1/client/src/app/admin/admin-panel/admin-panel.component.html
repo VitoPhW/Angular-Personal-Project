@@ -8,6 +8,12 @@
       </div>
     </tab>
 
+    <tab heading="New Product" *appHasRole="['Admin','Assistant']">
+      <div class="container">
+        <app-product-create></app-product-create>
+      </div>
+    </tab>
+
     <tab heading="Product Management" *appHasRole="['Admin','Assistant']">
       <div class="container">
         <app-product-management></app-product-management>

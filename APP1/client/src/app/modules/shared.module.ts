@@ -1,5 +1,5 @@
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
@@ -14,13 +14,23 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { ProductCardComponent } from '../products/product-card/product-card.component';
 import { MemberCardComponent } from '../members/member-card/member-card.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { DropdownComponent } from '../forms/dropdown/dropdown.component';
+import { PhotoEditorComponent } from '../products/product-edit/photo-editor/photo-editor.component';
+import { TextInputComponent } from '../forms/text-input/text-input.component';
+import { DateInputComponent } from '../forms/date-input/date-input.component';
 
 @NgModule({
   declarations: [
     ProductCardComponent,
-    MemberCardComponent
+    MemberCardComponent,
+    PhotoEditorComponent,
+    TextInputComponent,
+    DateInputComponent,
+    DropdownComponent
   ],
   imports: [
+    ReactiveFormsModule,
+
     CommonModule,
     NgxGalleryModule,
     TabsModule.forRoot(),
@@ -54,7 +64,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ButtonsModule,
     PaginationModule,
     ProductCardComponent,
+    PhotoEditorComponent,
     MemberCardComponent,
+    DropdownComponent,
+    TextInputComponent,
+    DateInputComponent,
     ModalModule
   ]
 })

@@ -10,16 +10,6 @@
 
   <div class="form-group text-center">
     <button [disabled]="registerForm.invalid" class="btn btn-success mr-2" type="submit">Register</button>
-    <button class="btn btn-default mr-2" type="button" (click)="cancel()">Cancel</button>
+    <button class="btn btn-outline-secondary mr-2" type="button" (click)="cancel()">Cancel</button>
   </div>
 </form>
-
-<!-- <div class="row mt-5" *ngIf="(validationErrors | async)?.length">
-  <ul class="text-danger">
-    <li *ngFor="let error of validationErrors | async">{{error}}</li>
-  </ul>
-</div> -->
-
-<!-- for form values check (in the bottom of webpage):
-<p>Form value: {{registerForm.value | json}}</p>
-<p>Form status: {{registerForm.status}}</p> -->

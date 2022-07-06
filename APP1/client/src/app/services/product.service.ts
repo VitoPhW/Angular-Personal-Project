@@ -20,13 +20,7 @@ export class ProductService {
   productCache = new Map<string, PaginatedResult<IProduct[]>>();
   productParams: ProductParams;
 
-  // in case filter based on user parameters is reqiered
-  // user: IUser;
-
   constructor(private http: HttpClient, accountService: AccountService) {
-    /* // in case filter based on user parameters is reqiered:
-    accountService.currentUser$ // runs in sync mode, because of currentUser$ is created localy, but not on server.
-    .pipe(take(1)).subscribe((user: any) => {this.user = user;}); */
 
     this.productParams = new ProductParams();
   }

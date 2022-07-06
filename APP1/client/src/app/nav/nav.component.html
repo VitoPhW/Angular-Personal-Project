@@ -21,19 +21,11 @@
         </li>
       </ul>
 
-      <div class="dropdown mr-5" *ngIf="currentUser$ | async as user" dropdown>
-        <a class="dropdown-toggle text-light" dropdownToggle>Administration</a>
-
-        <div class="dropdown-menu mt-3" *dropdownMenu>
-          <a *appHasRole="['Admin', 'Assistant']" class="dropdown-item" routerLink="/admin">Admin</a>
-          <div *appHasRole="['Admin', 'Assistant']" class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink="/members">Accounts</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink="/product/create">Create Product</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item">Add Category</a>
-        </div>
-      </div>
+      <button class="btn btn-primary mr-5"
+        *appHasRole="['Admin', 'Assistant']"
+        routerLink="/admin">
+        Admin panel
+      </button>
 
       <div class="dropdown" *ngIf="currentUser$ | async as user" dropdown>
         <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{user.username | titlecase}}</a>
@@ -52,6 +44,5 @@
         <input name="password" [(ngModel)]="model.password" class="form-control mr-sm-2" type="password" placeholder="Password">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Login</button>
       </form>
-    <!-- </div> -->
   </div>
 </nav>

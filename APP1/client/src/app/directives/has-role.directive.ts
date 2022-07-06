@@ -19,6 +19,8 @@ export class HasRoleDirective {
     this.accountService.currentUser$.pipe(
       take(1)).subscribe(user => {
         this.user = user;
+        console.log(this.user);
+
       }
     );
   }

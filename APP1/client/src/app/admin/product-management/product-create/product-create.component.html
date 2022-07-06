@@ -8,13 +8,13 @@
       <app-text-input formControlName="productDescription" label="Product Description"></app-text-input>
       <app-dropdown formControlName="categoryName" label="Category" [categories]="categories"></app-dropdown>
       <app-text-input formControlName="unitPrice" label="Unit Price" type="number"></app-text-input>
-      <app-text-input formControlName="unitsInStock" label="Units In Stock" type="number" pattern="[0-9]"></app-text-input>
+      <app-text-input formControlName="unitsInStock" label="Units In Stock" type="number" pattern="^\d+$"></app-text-input>
     </div>
   </div>
 
 
   <div class="form-group text-center">
     <button [disabled]="createForm.invalid" class="btn btn-success mr-2" type="submit">Create</button>
-    <button class="btn btn-default mr-2" type="button" (click)="cancel()">Cancel</button>
+    <button class="btn btn-outline-secondary mr-2" type="button" (click)="cancel()">Cancel</button>
   </div>
 </form>

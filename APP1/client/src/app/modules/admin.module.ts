@@ -6,11 +6,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from './shared.module';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductCreateComponent } from '../admin/product-management/product-create/product-create.component';
 
 const routes: Routes = [
   { path: '', component: AdminPanelComponent, pathMatch: 'full' },
-  // { path: ':productname', component: ProductDetailComponent },
-  // { path: ':productname/edit', component: ProductEditComponent, canDeactivate: [PreventUnsavedProdEditGuard] }
 ]
 
 @NgModule({
@@ -18,11 +18,13 @@ const routes: Routes = [
     AdminPanelComponent,
     ProductManagementComponent,
     UserManagementComponent,
+    ProductCreateComponent,
     HasRoleDirective
   ],
   imports: [
     CommonModule,
     SharedModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   exports: [
@@ -30,6 +32,7 @@ const routes: Routes = [
     AdminPanelComponent,
     ProductManagementComponent,
     UserManagementComponent,
+    FormsModule,
     HasRoleDirective
   ]
 })

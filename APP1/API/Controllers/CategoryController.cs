@@ -14,18 +14,19 @@ namespace API.Controllers
     [Authorize]
     public class CategoryController : BaseApiController
     {
-        private readonly ICategoryRepository _categoryRepository;
+        // private readonly ICategoryRepository _categoryRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public CategoryController(ICategoryRepository categoryRepository, IMapper mapper)
+        public CategoryController(IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
-            _categoryRepository = categoryRepository;
+            _unitOfWork = unitOfWork;
         }
-        
+
         [HttpGet]
         public async Task<ActionResult<PagedList<Category>>> GetCategories([FromQuery] CategoryParams categoryParams)
         {
-            var categories = await _categoryRepository.GetCategoriesAsync(categoryParams);
+            var categories = await _unitOfWork.CategoryRepository.GetCategoriesAsync(categoryParams);
             Response.AddPaginationHeader(
                 categories.CurrentPage,
                 categories.PageSize,
@@ -39,16 +40,16 @@ namespace API.Controllers
         [HttpGet("categorynames")]
         public async Task<IEnumerable<string>> GetNames()
         {
-            return await _categoryRepository.GetCategoryNamesAsync();
+            return await _unitOfWork.CategoryRepository.GetCategoryNamesAsync();
         }
 
         [HttpPost]
         public async Task<ActionResult> Create(Category category)
         {
-            if(await _categoryRepository.CategoryExists(category.CategoryName))
+            if(await _unitOfWork.CategoryRepository.CategoryExists(category.CategoryName))
                 return BadRequest("This such category already exists.");
             
-            _categoryRepository.Create(category);
+            _unitOfWork.CategoryRepository.Create(category);
 
             return Ok();
         }
@@ -56,19 +57,19 @@ namespace API.Controllers
         [HttpGet("{categoryname}", Name = "GetCategory")]
         public async Task<ActionResult<Category>> GetCategory(string categoryname)
         {
-            var category = await _categoryRepository.GetCategoryAsync(categoryname);
+            var category = await _unitOfWork.CategoryRepository.GetCategoryAsync(categoryname);
             return category;
         }
 
         [HttpPut]
         public async Task<ActionResult> UpdateCategory(Category categoryToUdate)
         {
-            var category = await _categoryRepository.GetCategoryAsync(categoryToUdate.CategoryName);
+            var category = await _unitOfWork.CategoryRepository.GetCategoryAsync(categoryToUdate.CategoryName);
             _mapper.Map(categoryToUdate,category);
 
-            _categoryRepository.Update(category);
+            _unitOfWork.CategoryRepository.Update(category);
 
-            if (await _categoryRepository.SaveAllAsync())
+            if (await _unitOfWork.Complete())
             {
                 return NoContent();
             }

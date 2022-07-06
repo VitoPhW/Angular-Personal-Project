@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
   model: any = {};
-  // loggedIn: boolean = false;
   currentUser$: Observable<IUser | null>;
   isAdmin: boolean = false;
 
@@ -29,11 +28,7 @@ export class NavComponent implements OnInit {
 
   login(){
     this.accountService.login(this.model)
-    .subscribe(
-      response => {
-      this.router.navigateByUrl('/products');
-      console.log(response);
-    });
+    .subscribe(response => this.router.navigateByUrl('/products'));
   }
 
   logout(){

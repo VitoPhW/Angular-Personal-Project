@@ -10,7 +10,7 @@ namespace API.Interfaces
     {
          void Create(Category category);
          void Update(Category category);
-         Task<bool> SaveAllAsync(); //Database tracking to save changes in appropriate time
+        //  Task<bool> SaveAllAsync(); //Database tracking to save changes in appropriate time
          Task<PagedList<Category>> GetCategoriesAsync(CategoryParams categoryParams);
          Task<Category> GetCategoryAsync(string categoryname);
          Task<IEnumerable<string>> GetCategoryNamesAsync();

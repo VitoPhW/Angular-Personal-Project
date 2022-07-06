@@ -16,6 +16,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProductListComponent,
+    ProductEditComponent,
     ProductDetailComponent
   ],
   imports: [

@@ -32,6 +32,7 @@ export class ProductCreateComponent implements OnInit {
     this.productService.create(this.createForm.value).subscribe(
       response => {
         this.router.navigate(['/products/'+`${this.createForm.value.productname}`]);
+        this.productService.productCache.clear();
         this.cancel();
       }
     )
@@ -43,11 +44,11 @@ export class ProductCreateComponent implements OnInit {
 
   initializeForm() {
     this.createForm = this.fb.group({
-      productname: ['', Validators.required],
-      productDescription:['', Validators.required],
-      categoryName: ['', [Validators.required]],
-      unitPrice: ['', Validators.required, Validators.min(0)],
-      unitsInStock: ['', Validators.required, Validators.min(0)]
+      productname: ['', [Validators.required, Validators.minLength(2)]],
+      productDescription:['', [Validators.required, Validators.minLength(2)]],
+      categoryName: ['', Validators.required],
+      unitPrice: ['', [Validators.required, Validators.min(0)]],
+      unitsInStock: ['', [Validators.required, Validators.min(0)]]
     });
   }
 

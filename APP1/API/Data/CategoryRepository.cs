@@ -50,10 +50,10 @@ namespace API.Data
             return category;
         }
 
-        public async Task<bool> SaveAllAsync()
-        {
-            return await _context.SaveChangesAsync() > 0;
-        }
+        // public async Task<bool> SaveAllAsync()
+        // {
+        //     return await _context.SaveChangesAsync() > 0;
+        // }
 
         public void Update(Category category)
         {

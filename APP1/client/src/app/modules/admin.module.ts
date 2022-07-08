@@ -1,3 +1,4 @@
+import { MemberListComponent } from './../members/member-list/member-list.component';
 import { HasRoleDirective } from './../directives/has-role.directive';
 import { UserManagementComponent } from './../admin/user-management/user-management.component';
 import { ProductManagementComponent } from './../admin/product-management/product-management.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
     ProductManagementComponent,
     UserManagementComponent,
     ProductCreateComponent,
+    MemberListComponent,
     HasRoleDirective
   ],
   imports: [
@@ -32,6 +34,7 @@ const routes: Routes = [
     AdminPanelComponent,
     ProductManagementComponent,
     UserManagementComponent,
+    MemberListComponent,
     FormsModule,
     HasRoleDirective
   ]

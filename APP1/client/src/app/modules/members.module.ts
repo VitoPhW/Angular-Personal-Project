@@ -7,13 +7,13 @@ import { SharedModule } from './shared.module';
 
 
 const routes: Routes = [
-  { path: '', component: MemberListComponent, pathMatch: 'full' },
+  // { path: '', component: MemberListComponent, pathMatch: 'full' },
   { path: ':username', component: MemberDetailComponent }
 ]
 
 @NgModule({
   declarations: [
-    MemberListComponent,
+    // MemberListComponent,
     MemberDetailComponent
   ],
   imports: [
@@ -23,7 +23,7 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule,
-    MemberListComponent,
+    // MemberListComponent,
     MemberDetailComponent
   ]
 })

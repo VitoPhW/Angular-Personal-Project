@@ -1,0 +1,25 @@
+.row {
+  padding-top: 48px;
+  justify-content: center;
+}
+
+.title {
+  width: 30rem;
+  text-align: end;
+  padding-right: 48px;
+}
+
+.speech {
+  width: 36rem;
+}
+
+.speech h4 {
+  font-weight: 300;
+  line-height: 2.4rem;
+}
+
+.title h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 5.8rem;
+}

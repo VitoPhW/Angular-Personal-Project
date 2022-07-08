@@ -3,7 +3,7 @@ import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from 'src/app/models/IProduct';
 import { ToastrService } from 'ngx-toastr';
-import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
+import { NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
 import { NgForm } from '@angular/forms';
 
 @Component({

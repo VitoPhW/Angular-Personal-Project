@@ -13,15 +13,13 @@ import { Router } from '@angular/router';
 export class NavComponent implements OnInit {
   model: any = {};
   currentUser$: Observable<IUser | null>;
-  isAdmin: boolean = false;
 
   constructor
-    (private accountService: AccountService,
-     private router: Router,
-     private toastr: ToastrService)
+  (private accountService: AccountService,
+    private router: Router,
+    private toastr: ToastrService)
     {
       this.currentUser$ = this.accountService.currentUser$;
-
     }
 
   ngOnInit(): void { }

@@ -1,5 +1,8 @@
+import { AccountService } from './../services/account.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IUser } from '../models/IUser';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +12,16 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   registerMode = false;
   users: any;
+  currentUser$: Observable<IUser | null>;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private accountService: AccountService
+    ) { }
 
   ngOnInit(): void {
-    // this.getUsers(); //get users list for dropdown users list for example
-  }
+    this.currentUser$ = this.accountService.currentUser$;
+   }
 
   registerToggle() {
     this.registerMode = !this.registerMode;

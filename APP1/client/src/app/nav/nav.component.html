@@ -7,18 +7,17 @@
           <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" routerLink="/products">Store</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/prodlists">Products</a>
-          </li>
         </ng-container>
 
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/about">About</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/errors">Errors</a>
-        </li>
+        <ng-container *ngIf="currentUser$ | async">
+          <li class="nav-item" *appHasRole="['Admin']">
+            <a class="nav-link" routerLinkActive="active" routerLink="/errors" *appHasRole="['Admin']">Errors</a>
+          </li>
+        </ng-container>
       </ul>
 
       <button class="btn btn-primary mr-5"

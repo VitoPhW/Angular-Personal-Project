@@ -16,7 +16,6 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { CoreModule } from './modules/core.module';
 import { AboutComponent } from './about/about.component';
-import { ListsComponent } from './lists/lists.component';
 import { ProductsModule } from './modules/products.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
@@ -33,7 +32,6 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
     NavComponent,
     HomeComponent,
     RegisterComponent,
-    ListsComponent,
     AboutComponent,
     TestErrorsComponent,
     NotFoundComponent,

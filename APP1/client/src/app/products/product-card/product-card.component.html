@@ -23,15 +23,17 @@
         </button>
       </li>
 
-      <li class="list-inline-item">
-        <button class="btn btn-info btn-sm" routerLink="/products/{{product.productname}}/edit">
-          <i class="fa fa-pencil"></i>
-        </button>
-      </li>
 
     </ul>
   </div>
   <div class="card-body p-1">
+    <!-- <ng-container *appHasRole="['Admin','Assistant']"> -->
+      <li class="list-inline-item">
+        <button class="btn btn-info btn-sm" routerLink="/products/{{product.productname}}/edit">
+          <i class="fa fa-pencil" *appHasRole="['Admin','Assistant']"></i>
+        </button>
+      </li>
+    <!-- </ng-container> -->
     <h6 class="card-title text-center mg-1">{{product.categoryName}}
       <i class="fa fa-tag mr-2"></i>{{product.productname}}
     </h6>

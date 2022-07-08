@@ -24,6 +24,7 @@
 - Members: page doesn't loading, backend issue.
 - Admin: make one page with toggle of create Product and create Category.
 - Admin: complete Product Management tab, under Admin.
+- Admin: view users => add button for user edit with condition in edit component if username sent to.
 - Nav: "Aministration" doesn't appears after Admin login.
 - "Items" should be under "/prodlists" route.
 - correct focus of photo on Cloudinary, not on face, but full.

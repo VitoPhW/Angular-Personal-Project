@@ -25,13 +25,20 @@ export class MemberEditComponent implements OnInit {
     }
   }
 
-  constructor(private memberService: MembersService, private accountService: AccountService, private toastr: ToastrService) {
-    this.accountService.currentUser$.pipe(take(1)).subscribe(user => { this.user = user as IUser; });
+  constructor(
+              private memberService: MembersService,
+              private accountService: AccountService,
+              private toastr: ToastrService) {
+    this.accountService.currentUser$.pipe(take(1)).subscribe(
+      user => { this.user = user as IUser; }
+      );
   }
 
   ngOnInit() { this.loadMember(); }
 
-  loadMember() { this.memberService.getMember(this.user.username).subscribe(member => { this.member = member; }); }
+  loadMember() {
+    this.memberService.getMember(this.user.username).subscribe(member => { this.member = member; });
+  }
 
   updateMember() {
     this.memberService.updateMember(this.member).subscribe(()=>{

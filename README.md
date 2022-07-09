@@ -72,27 +72,27 @@ An online shop, managed by administrator and assistants. Products can be updated
 -    [Database auto-creation](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/Seed.cs)
 -    [Required parameters + MaxLength (Product)](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Entities/Product.cs)
 ### Client side
--    Journey levels [Products list](https://github.com/VitoPhW/Angular-Personal-Project/README.md#store-page) - [Products details](https://github.com/VitoPhW/Angular-Personal-Project/README.md#product-details)
--    [Home page](https://github.com/VitoPhW/Angular-Personal-Project/README.md#store-page)
--    [Navigation bar](https://github.com/VitoPhW/Angular-Personal-Project/README.md#store)
+-    Journey levels [Products list](https://github.com/VitoPhW/Angular-Personal-Project#store-page) - [Products details](https://github.com/VitoPhW/Angular-Personal-Project#product-details)
+-    [Home page](https://github.com/VitoPhW/Angular-Personal-Project#store-page)
+-    [Navigation bar](https://github.com/VitoPhW/Angular-Personal-Project#store)
 -    Footer - NA
 -    Alt - NA
--    [About](https://github.com/VitoPhW/Angular-Personal-Project/README.md#about)
--    [Log in](https://github.com/VitoPhW/Angular-Personal-Project/README.md#welcome-screen)
--    [Registration](https://github.com/VitoPhW/Angular-Personal-Project/README.md#registration)
+-    [About](https://github.com/VitoPhW/Angular-Personal-Project#about)
+-    [Log in](https://github.com/VitoPhW/Angular-Personal-Project#welcome-screen)
+-    [Registration](https://github.com/VitoPhW/Angular-Personal-Project#registration)
 -    [Information/error pop-up (authentication toastr)](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/src/app/guards/auth.guard.ts)
--    CRUD client side - [Create product](https://github.com/VitoPhW/Angular-Personal-Project/README.md#new-product-tab), [Update product, create/update/delete photo](https://github.com/VitoPhW/Angular-Personal-Project/README.md#product-edit---photo-editor-tab)
--    [Move to details page](https://github.com/VitoPhW/Angular-Personal-Project/README.md#product-details)
+-    CRUD client side - [Create product](https://github.com/VitoPhW/Angular-Personal-Project#new-product-tab), [Update product, create/update/delete photo](https://github.com/VitoPhW/Angular-Personal-Project#product-edit---photo-editor-tab)
+-    [Move to details page](https://github.com/VitoPhW/Angular-Personal-Project#product-details)
 -    Search - NA
 -    [Components structure](https://github.com/VitoPhW/Angular-Personal-Project/tree/main/APP1/client/src/app)
 -    Clear Console - Done
--    [Filter (Products)](https://github.com/VitoPhW/Angular-Personal-Project/README.md#store)
+-    [Filter (Products)](https://github.com/VitoPhW/Angular-Personal-Project#store)
 -    [Division into pages](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/src/app/app-routing.module.ts)
--    [Data validation](https://github.com/VitoPhW/Angular-Personal-Project/README.md#registration---data-validation)
+-    [Data validation](https://github.com/VitoPhW/Angular-Personal-Project#registration---data-validation)
 -    [Call httpClient](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/src/app/services/account.service.ts)
 -    [Use ngx-bootstrap](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/package.json)
 -    [Use font-awesome](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/package.json)
--    [Redirect to 404](https://github.com/VitoPhW/Angular-Personal-Project/README.md#404-page)
+-    [Redirect to 404](https://github.com/VitoPhW/Angular-Personal-Project#404-page)
 
 ### Out of scope
 -    Delete user.
@@ -114,15 +114,15 @@ An online shop, managed by administrator and assistants. Products can be updated
 -   Product - Products.
 
 #### Pages
--    [Welcome](https://github.com/VitoPhW/Angular-Personal-Project/README.md#welcome-screen) - Welcome page, first screen on website opening.
--    [Registration](https://github.com/VitoPhW/Angular-Personal-Project/README.md#registration) - Sign in page, to create new customer.
--    [Store](https://github.com/VitoPhW/Angular-Personal-Project/README.md#store-page) - Store page, products list with filtering and sorting.
--    [Product details](https://github.com/VitoPhW/Angular-Personal-Project/README.md#product-details) - Product details screen.
--    [About](https://github.com/VitoPhW/Angular-Personal-Project/README.md#about) - About page.
--    [Store](https://github.com/VitoPhW/Angular-Personal-Project/README.md#store) - Store page, Admin/Assistant view.
--    [Product edit](https://github.com/VitoPhW/Angular-Personal-Project/README.md#product-edit---photo-editor-tab) - Product edit page (Admin/Assistant only).
--    [Edit roles tab](https://github.com/VitoPhW/Angular-Personal-Project/README.md#edit-roles-tab) - Admin panel, roles management (Admin only).
--    [New Product tab](https://github.com/VitoPhW/Angular-Personal-Project/README.md#new-product-tab) - Admin panel, new product form (Admin only).
+-    [Welcome](https://github.com/VitoPhW/Angular-Personal-Project#welcome-screen) - Welcome page, first screen on website opening.
+-    [Registration](https://github.com/VitoPhW/Angular-Personal-Project#registration) - Sign in page, to create new customer.
+-    [Store](https://github.com/VitoPhW/Angular-Personal-Project#store-page) - Store page, products list with filtering and sorting.
+-    [Product details](https://github.com/VitoPhW/Angular-Personal-Project#product-details) - Product details screen.
+-    [About](https://github.com/VitoPhW/Angular-Personal-Project#about) - About page.
+-    [Store](https://github.com/VitoPhW/Angular-Personal-Project#store) - Store page, Admin/Assistant view.
+-    [Product edit](https://github.com/VitoPhW/Angular-Personal-Project#product-edit---photo-editor-tab) - Product edit page (Admin/Assistant only).
+-    [Edit roles tab](https://github.com/VitoPhW/Angular-Personal-Project#edit-roles-tab) - Admin panel, roles management (Admin only).
+-    [New Product tab](https://github.com/VitoPhW/Angular-Personal-Project#new-product-tab) - Admin panel, new product form (Admin only).
 
 ### Customer view
 #### Welcome screen

@@ -67,7 +67,7 @@ An online shop, managed by administrator and assistants. Products can be updated
 -    rxjs | reactive programming (Observable)
 -    Cloudinary | cloud media library
 -    Exception handling backend | ExceptionMiddleware.cs, ApiException.cs
--    Exception handling frontend | 
+-    Exception handling frontend | error.interceptor.ts, ../errors/..
 -    Design Patterns | Unit of work, Repositories
 
 
@@ -80,12 +80,6 @@ An online shop, managed by administrator and assistants. Products can be updated
 -   Likes - Products liked by users (Many-to-many).
 -   Photos - Product images (One-to-many).
 -   Product - Products.
-
-#### SQL diagram
-<img src="https://github.com/VitoPhW/HackerU-Middle_Project-OnlineShop/blob/master/ProjectElements/OnlineShop_SQL-Diagram.png"
-     alt="Online Shop - SQL Diagram"
-     width="800px"
-     style="float: left; margin-right: 10px;" />
 
 #### WPF screens
 -    MainWindow - Home page, first screen on application opening.

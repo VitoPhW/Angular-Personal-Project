@@ -63,6 +63,37 @@ An online shop, managed by administrator and assistants. Products can be updated
 -    Exception handling frontend | error.interceptor.ts, ../errors/..
 -    Design Patterns | Unit of work, Repositories
 
+### Project requirements
+#### SQL
+-    [SQL Lite Database](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/API/app1.db)
+-    [Users table](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Entities/AppUser.cs)
+-    [CRUD Users](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/UserRepository.cs), [CRUD Products](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/ProductRepository.cs), [CRUD Category](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/CategoryRepository.cs)
+-    [Join Users-LikedProduct](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/LikeRepository.cs)
+-    [Database auto-creation](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/Seed.cs)
+-    [Required parameters + MaxLength (Product)](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Entities/Product.cs)
+### Client side
+-    Journey levels [Products list](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#store-page) - [Products details](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#product-details)
+-    [Home page](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#store-page)
+-    [Navigation bar](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#store)
+-    Footer - NA
+-    Alt - NA
+-    [About](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#about)
+-    [Log in](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#welcome-screen)
+-    [Registration](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#registration)
+-    [Information/error pop-up (authentication toastr)](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/client/src/app/guards/auth.guard.ts)
+-    CRUD client side - [Create product](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#new-product-tab), [Update product, create/update/delete photo](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#product-edit---photo-editor-tab)
+-    [Move to details page](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#product-details)
+-    Search - NA
+-    [Components structure](https://github.com/VitoPhW/Angular-Personal-Project/tree/Branch-16--Unit-of-Work-pattern/APP1/client/src/app)
+-    Clear Console - Done
+-    [Filter (Products)](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#store)
+-    [Division into pages](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/client/src/app/app-routing.module.ts)
+-    [Data validation](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#registration---data-validation)
+-    [Call httpClient](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/client/src/app/services/account.service.ts)
+-    [Use ngx-bootstrap](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/client/package.json)
+-    [Use font-awesome](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/client/package.json)
+-    [Redirect to 404](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#404-page)
+
 ### Out of scope
 -    Delete user.
 -    Category management (frontend).
@@ -105,7 +136,13 @@ An online shop, managed by administrator and assistants. Products can be updated
      alt="Registration"
      width="800px"
      style="float: left; margin-right: 10px;" />
-
+     
+#### Registration - data validation
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20Registration%20page%20-%20with%20validation%20errors.png"
+     alt="Registration - data validation"
+     width="800px"
+     style="float: left; margin-right: 10px;" />
+     
 #### Store page
 <img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20Store%20(by%20Customer).png"
      alt="Store"
@@ -142,10 +179,15 @@ An online shop, managed by administrator and assistants. Products can be updated
      alt="Edit roles tab - Admin panel"
      width="800px"
      style="float: left; margin-right: 10px;" />
-     
-     
+          
 #### New product tab
 <img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20Admin%20panel%20-%20New%20Product%20tab%20(by%20Admin).png"
      alt="New product tab - Admin panel"
+     width="800px"
+     style="float: left; margin-right: 10px;" />
+     
+#### 404 page
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20404.png"
+     alt="404 page"
      width="800px"
      style="float: left; margin-right: 10px;" />

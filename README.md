@@ -11,8 +11,8 @@ An online shop, managed by administrator and assistants. Products can be updated
 -    All products view.
 -    Filter products list.
 -    Change order of products list.
--    List of products separated by pages.
--    Open product details.
+-    List of products separated by pages (pagination).
+-    View product details.
 -    Like/unlike product.
 -    View which products are liked by customer or other user.
 -    View who liked particular product.
@@ -23,15 +23,21 @@ An online shop, managed by administrator and assistants. Products can be updated
 -    Edit products (by Admin and Assistant).
 
 #### Admin only
--	Accounts role management.
+-	View user roles.
+-	Edit user roles.
 -	Create product.
 
 #### Assistant and Admin
 -	Edit product details.
+-	Add/remove product's photos.
+-	Set main photo.
+-	View users list.
+-	View user's details.
 
 #### Customer
 -	Browsing through the available products, with filtering and sorting.
 -	View product details.
+-	Like/unlike a product.
 -	Register as a customer.
 -    Log in.
 -    Log out.
@@ -67,7 +73,7 @@ An online shop, managed by administrator and assistants. Products can be updated
 -	Check out (placing an order), as a registered user.
 -	Payment process.
 
-#### [SQL Database (../ProjectElements/DatabaseCreationQuery)](https://github.com/VitoPhW/HackerU-Middle_Project-OnlineShop/tree/master/ProjectElements/DatabaseCreationQuery)
+#### [SQL Database](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/API/Data)
 -   AspNetRoles - User type (Admin, Assistant, Customer).
 -   AspNetUserRoles - Roles attached to users (Many-to-many).
 -   AspNetUsers - Users.

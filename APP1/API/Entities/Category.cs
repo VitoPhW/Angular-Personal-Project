@@ -12,8 +12,5 @@ namespace API.Entities
         public string CategoryDescription { get; set; }
 
         public string PhotoUrl { get; set; }
-        // [DataType(DataType.ImageUrl)]
-        // #nullable enable
-        // public string? ImageURL { get; set; }
     }
 }

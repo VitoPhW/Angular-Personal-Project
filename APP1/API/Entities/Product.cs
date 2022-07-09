@@ -27,10 +27,6 @@ namespace API.Entities
         public int UnitsInStock { get; set; }
 
         public ICollection<Photo> Photos { get; set; }
-        // [DataType(DataType.ImageUrl)]
-        // #nullable enable
-        // public string? Image { get; set; }
-
         public ICollection<ProductLike> LikedBy { get; set; } = new List<ProductLike>();
     }
 }

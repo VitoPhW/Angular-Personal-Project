@@ -2,9 +2,5 @@ using System;
 
 namespace API.Helpers
 {
-    public class MemberParams : PaginationParams
-    {
-   
-        
-    }
+    public class MemberParams : PaginationParams { }
 }

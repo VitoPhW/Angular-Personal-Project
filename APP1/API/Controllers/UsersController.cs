@@ -27,10 +27,10 @@ namespace API.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [HttpPut] // user/id/*
+        [HttpPut]
         public async Task<ActionResult> UpdateUser(MemberUpdateDto memberUpdateDto)
         {
-            var username = User.GetUsername(); //nameid
+            var username = User.GetUsername();
             var user = await _unitOfWork.UserRepository.GetUserByUserNameAsync(username);
             _mapper.Map(memberUpdateDto, user);
 
@@ -57,7 +57,7 @@ namespace API.Controllers
             return Ok(members);
         }
 
-        [HttpGet("{username}")] // :id route parameter : api/users/angie
+        [HttpGet("{username}")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
             var userToReturn = await _unitOfWork.UserRepository.GetMemberAsync(username);

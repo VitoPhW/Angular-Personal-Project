@@ -72,7 +72,7 @@ namespace API.Controllers
             return Ok(products);
         }
 
-        [HttpGet("{productname}", Name = "GetProduct")] // :id route parameter : api/Products/Witt
+        [HttpGet("{productname}", Name = "GetProduct")]
         public async Task<ActionResult<ProductDto>> GetProduct(string productname)
         {
             var productToReturn = await _unitOfWork.ProductRepository.GetProductAsync(productname);
@@ -104,7 +104,6 @@ namespace API.Controllers
             if (await _unitOfWork.Complete())
             {
                 return CreatedAtRoute("GetProduct", new { productname = product.ProductName }, _mapper.Map<PhotoDto>(photo));
-                //return _mapper.Map<PhotoDto>(photo);
             }
 
             return BadRequest("Problem adding Photos.");

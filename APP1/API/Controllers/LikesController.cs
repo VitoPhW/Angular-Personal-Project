@@ -13,9 +13,6 @@ namespace API.Controllers
     [Authorize]
     public class LikesController : BaseApiController
     {
-        // private readonly IUserRepository _userRepository;
-        // private readonly ILikeRepository _likeRepository;
-        // private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
 
         public LikesController(IUnitOfWork unitOfWork)
@@ -23,7 +20,7 @@ namespace API.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [HttpPut("addlike/{productname}")] // PUT like/addlike/{productname}
+        [HttpPut("addlike/{productname}")]
         public async Task<ActionResult> AddLike(string productname)
         {
             var userId = User.GetUserId();
@@ -46,7 +43,7 @@ namespace API.Controllers
             return BadRequest("Failed to like a product.");
         }
 
-        [HttpPut("removelike/{productname}")] // PUT like/addlike/{productname}
+        [HttpPut("removelike/{productname}")]
         public async Task<ActionResult> RemoveLike(string productname)
         {
             var userId = User.GetUserId();

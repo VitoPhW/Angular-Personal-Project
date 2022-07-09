@@ -75,7 +75,5 @@ namespace API.Controllers
             }
             return BadRequest("Failed to update category");
         }
-    
-        // [HttpDelete()]
     }
 }

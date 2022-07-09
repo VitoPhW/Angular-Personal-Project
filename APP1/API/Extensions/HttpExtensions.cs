@@ -19,7 +19,7 @@ namespace API.Extensions
             var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
             response.Headers.Add("Pagination", JsonSerializer.Serialize(paginationHeader, options));
 
-            response.Headers.Add("Access-Control-Expose-Headers", "Pagination"); //turning header "Pagination" to accepted header, to not be blocked by CORS.
+            response.Headers.Add("Access-Control-Expose-Headers", "Pagination");
         }
     }
 }

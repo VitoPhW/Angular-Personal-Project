@@ -18,17 +18,13 @@ namespace API.Data
 
         }
 
-        // get the like of particullar user of particular product
         public async Task<ProductLike> GetProductLike(int userId, int productId)
         {
             return await _context.Likes.FindAsync(productId, userId);
         }
 
-        // get users that likes this product
         public async Task<IEnumerable<MemberLikeDto>> GetProductLikes(int productId)
-        {
-            // throw new System.NotImplementedException();
-        
+        {        
             IQueryable<AppUser> users;
             var likes = _context.Likes.AsQueryable();
 
@@ -66,7 +62,6 @@ namespace API.Data
                 return await PagedList<ProductDto>.CreateAsync(likedProducts, likesParams.PageNumber, likesParams.PageSize);
         }
 
-        // get user with products user likes
         public async Task<AppUser> GetUserWithLikes(int userId) 
         {
             return await _context.Users

@@ -18,6 +18,7 @@ import { DropdownComponent } from '../forms/dropdown/dropdown.component';
 import { PhotoEditorComponent } from '../products/product-edit/photo-editor/photo-editor.component';
 import { TextInputComponent } from '../forms/text-input/text-input.component';
 import { DateInputComponent } from '../forms/date-input/date-input.component';
+import { HasRoleDirective } from '../directives/has-role.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DateInputComponent } from '../forms/date-input/date-input.component';
     PhotoEditorComponent,
     TextInputComponent,
     DateInputComponent,
-    DropdownComponent
+    DropdownComponent,
+    HasRoleDirective
   ],
   imports: [
     ReactiveFormsModule,
@@ -68,7 +70,8 @@ import { DateInputComponent } from '../forms/date-input/date-input.component';
     DropdownComponent,
     TextInputComponent,
     DateInputComponent,
-    ModalModule
+    ModalModule,
+    HasRoleDirective
   ]
 })
 export class SharedModule { }

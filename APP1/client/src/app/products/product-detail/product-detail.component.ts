@@ -54,33 +54,6 @@ export class ProductDetailComponent implements OnInit {
         preview: false
       }
     ];
-
-    // this.galleryImages = [
-    //   {
-    //     small: 'https://picsum.photos/362/210.jpg',
-    //     medium: 'https://picsum.photos/362/210.jpg',
-    //     big: 'https://picsum.photos/362/210.jpg'
-    //   },
-    //   {
-    //     small: 'https://picsum.photos/362/210.jpg',
-    //     medium: 'https://picsum.photos/362/210.jpg',
-    //     big: 'https://picsum.photos/362/210.jpg'
-    //   },
-    //   {
-    //     small: 'https://picsum.photos/362/210.jpg',
-    //     medium: 'https://picsum.photos/362/210.jpg',
-    //     big: 'https://picsum.photos/362/210.jpg'
-    //   },{
-    //     small: 'https://picsum.photos/362/210.jpg',
-    //     medium: 'https://picsum.photos/362/210.jpg',
-    //     big: 'https://picsum.photos/362/210.jpg'
-    //   },
-    //   {
-    //     small: 'https://picsum.photos/362/210.jpg',
-    //     medium: 'https://picsum.photos/362/210.jpg',
-    //     big: 'https://picsum.photos/362/210.jpg'
-    //   }
-    // ];
   }
 
   getImages(): NgxGalleryImage[] {

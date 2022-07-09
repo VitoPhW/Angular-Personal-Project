@@ -11,8 +11,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductCardComponent implements OnInit {
   @Input() product!: IProduct;
 
-  //liked = this.product.isLiked;
-
   constructor(private productService: ProductService, private toastr: ToastrService) { }
 
   ngOnInit(): void {

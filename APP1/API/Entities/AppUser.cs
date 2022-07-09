@@ -9,18 +9,6 @@ namespace API.Entities
 {
     public class AppUser : IdentityUser<int>
     {
-        // public int Id { get; set; }
-        // public string UserName { get; set; }
-        // public byte[] PasswordHash { get; set; }
-        // public byte[] PasswordSalt { get; set; }
-        
-        // public UserType Type { get; set; }
-        // [EmailAddress, Required, MaxLength(100)]
-        // public string Email { get; set; }
-
-        // [Phone, MaxLength(20)]
-        // public string Phone { get; set; }
-
         [MaxLength(40)]
         public string FirstName { get; set; }
         [MaxLength(50)]

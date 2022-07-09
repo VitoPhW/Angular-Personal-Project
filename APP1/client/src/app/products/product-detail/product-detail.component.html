@@ -15,10 +15,14 @@
           <strong>Left:</strong>
           <p>{{product.unitsInStock}}</p>
         </div>
-      </div>
-      <div class="card-footer">
-        <button type="submit" class="btn btn-success btn-block" routerLink="/products/{{product.productname}}/edit">Edit product</button>
-      </div>
+        </div>
+          <div class="card-footer" *appHasRole="['Admin', 'Assistant']">
+            <button type="submit"
+                    class="btn btn-success btn-block"
+                    routerLink="/products/{{product.productname}}/edit">
+            <i class="fa fa-pencil"></i> Edit product
+          </button>
+        </div>
     </div>
   </div>
   <div class="col-8">
@@ -34,7 +38,6 @@
             </div>
           </div>
         </div>
-
 
       </tab>
       <tab heading="Photos">

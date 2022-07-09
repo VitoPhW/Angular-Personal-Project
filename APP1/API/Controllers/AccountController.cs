@@ -53,7 +53,7 @@ namespace API.Controllers
             };
         }
 
-        [HttpPost("login")] //API/account/login
+        [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             var user = await this._userManager.Users.SingleOrDefaultAsync(x => x.UserName.ToLower() == loginDto.Username.ToLower());

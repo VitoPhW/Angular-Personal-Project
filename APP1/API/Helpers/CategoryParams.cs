@@ -9,8 +9,8 @@ namespace API.Helpers
         private int _pageSize = 6;
         public int PageSize
         {
-            get => _pageSize; // getter
-            set => _pageSize = Math.Min(MaxPageSize, value); //setter
+            get => _pageSize;
+            set => _pageSize = Math.Min(MaxPageSize, value);
         }
     }
 }

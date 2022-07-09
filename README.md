@@ -3,24 +3,24 @@
 "Tal ve Yuval ve" is an online shop of aesthetic style clothes of long-term fashion with recycling ability.
 
 ### Description
-An online shop, managed by administrator and assistants. Items models can be updated by assistants as users. The item can be bought by registered customer. Customer can see orders history and use the history products for recurring orders. Admins and users can search for every order registered in the system.
+An online shop, managed by administrator and assistants. Products can be updated by assistants or admin. The product can be bought by registered customer. Customer can like products and view it details.
 
 ### Features
 -	Online Registration/Login/Logout.
 -	Login data encryption.
--   All products view.
--   Filter products list.
--   Change order of products list.
--   List of products separated by pages.
--   Open product details.
--   Like/unlike product.
--   View which products are liked by customer or other user.
--   View who liked particular product.
--   Edit my profile.
--	Edit users roles Admin/Assistant/Customer (by Admin only).
--   Create new product (by Admin only).
--   View users and user's details (by Admin and Assistant).
--   Edit products (by Admin and Assistant).
+-    All products view.
+-    Filter products list.
+-    Change order of products list.
+-    List of products separated by pages.
+-    Open product details.
+-    Like/unlike product.
+-    View which products are liked by customer or other user.
+-    View who liked particular product.
+-    Edit my profile.
+-    Edit users roles Admin/Assistant/Customer (by Admin only).
+-    Create new product (by Admin only).
+-    View users and user's details (by Admin and Assistant).
+-    Edit products (by Admin and Assistant).
 
 ### Supported user journeys
 
@@ -35,40 +35,40 @@ An online shop, managed by administrator and assistants. Items models can be upd
 -	Browsing through the available products, with filtering and sorting.
 -	View product details.
 -	Register as a customer.
--   Log in.
--   Log out.
--   Edit profile.
+-    Log in.
+-    Log out.
+-    Edit profile.
 
 ### Out of scope
--   Delete user.
--   Create category.
--   View my previous orders.
--   View my liked products.
--   Edit another user's details.
--   Add product to shopping cart.
+-    Delete user.
+-    Create category.
+-    View my previous orders.
+-    View my liked products.
+-    Edit another user's details.
+-    Add product to shopping cart.
 -	Check out (placing an order), as a registered user.
 -	Payment process.
 
-### Used
+### Implemented
 
 -	C# .NET | backend
 -	Angular | frontend
 -	Entity Framework (EF) Core .NET | database management
--   Identity .NET | sign in / log in / user roles
--	SQL Lite | database
--   bootswatch | UI design theme ([Current is Minty](https://bootswatch.com/minty/))
--   font-awesome | product / user card buttons icon
--   @angular/forms | sign in / new product forms, filled data validation, navigation bar
--   ng2-file-upload | product images upload to Cloudinary
--   ngx-bootstrap | buttons, modals, pagination, dropdown, timepicker, tabs
--   ngx-gallery | view product images
--   ngx-spinner | database transaction loading animation
--   ngx-toastr | information pop-up messages
--   rxjs | reactive programming (Observable)
--   Cloudinary | cloud media library
-
-Exception handling |
-Design Patterns | Unit of work, Repositories
+-    Identity .NET | sign in / log in / user roles
+-    SQL Lite | database
+-    bootswatch | UI design theme ([Current is Minty](https://bootswatch.com/minty/))
+-    font-awesome | product / user card buttons icon
+-    @angular/forms | sign in / new product forms, filled data validation, navigation bar
+-    ng2-file-upload | product images upload to Cloudinary
+-    ngx-bootstrap | buttons, modals, pagination, dropdown, timepicker, tabs
+-    ngx-gallery | view product images
+-    ngx-spinner | database transaction loading animation
+-    ngx-toastr | information pop-up messages
+-    rxjs | reactive programming (Observable)
+-    Cloudinary | cloud media library
+-    Exception handling backend | ExceptionMiddleware.cs, ApiException.cs
+-    Exception handling frontend | 
+-    Design Patterns | Unit of work, Repositories
 
 
 

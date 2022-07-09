@@ -41,7 +41,7 @@ namespace API.Data
         {
             var query = _context.Users
             .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
-            .AsNoTracking(); //OPTIMIZATION - don't track the unchangeable data
+            .AsNoTracking();
 
             return await PagedList<MemberDto>.CreateAsync
             (

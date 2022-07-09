@@ -1,6 +1,6 @@
 <div class="card mb-4">
   <div class="card-img-wrapper">
-    <img class="card-img-top" [src]="product.photoUrl" alt="{{product.productname}}">
+    <img class="card-img-top" [src]="product.photoUrl" alt="{{product.productname}}" routerLink="/products/{{product.productname}}">
     <ul class="list-inline item-icons animate text-center">
 
       <li class="list-inline-item">
@@ -22,18 +22,15 @@
           <i class="fa fa-cart-plus"></i>
         </button>
       </li>
-
-
+      <li class="list-inline-item" *appHasRole="['Admin', 'Assistant']">
+        <button class="btn btn-info btn-sm" routerLink="/products/{{product.productname}}/edit">
+          <i class="fa fa-pencil"></i>
+        </button>
+      </li>
     </ul>
   </div>
   <div class="card-body p-1">
-    <!-- <ng-container *appHasRole="['Admin','Assistant']"> -->
-      <li class="list-inline-item">
-        <button class="btn btn-info btn-sm" routerLink="/products/{{product.productname}}/edit">
-          <i class="fa fa-pencil" *appHasRole="['Admin','Assistant']"></i>
-        </button>
-      </li>
-    <!-- </ng-container> -->
+
     <h6 class="card-title text-center mg-1">{{product.categoryName}}
       <i class="fa fa-tag mr-2"></i>{{product.productname}}
     </h6>

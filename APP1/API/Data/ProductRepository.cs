@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
@@ -7,7 +6,6 @@ using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -32,13 +30,10 @@ namespace API.Data
         public async Task<PagedList<ProductDto>> GetProductsAsync(ProductParams productParams)
         {
             var query = _context.Product.AsQueryable();
-            // Filter off products which not in stock.
             query = query.Where(x => x.UnitsInStock > 0);
 
-            // Filter by minimum and maximum price.
             query = query.Where( x=>x.UnitPrice >= productParams.MinPrice && x.UnitPrice <= productParams.MaxPrice);
 
-            // Filter by Category name
             if(productParams.Category != null && productParams.Category != "")
                 query = query.Where(x=>x.CategoryName == productParams.Category);
 

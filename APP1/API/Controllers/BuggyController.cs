@@ -34,7 +34,7 @@ namespace API.Controllers
             var thing = _context.Users.Find(-1);
             if(thing == null) return NotFound();
 
-            return Ok(); //😫 
+            return Ok();
         }
 
         // 500 server error
@@ -42,9 +42,9 @@ namespace API.Controllers
         public ActionResult<string> GetServerError()
         {
             var thing = _context.Users.Find(-1);
-            var thingToString = thing.ToString(); // NullReferenceException
+            var thingToString = thing.ToString();
 
-            return thingToString; // 😫
+            return thingToString;
         }
 
         [HttpGet("bad-request")]

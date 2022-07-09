@@ -24,8 +24,6 @@ import { MemberEditComponent } from './member-edit/member-edit.component';
 import { AdminModule } from './modules/admin.module';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

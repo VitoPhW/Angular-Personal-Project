@@ -41,7 +41,7 @@ export class PhotoEditorComponent implements OnInit {
     }
     this.uploader = new FileUploader(options)
     this.uploader.onAfterAddingFile = (file) => {
-      file.withCredentials = false; // here change to admin rights only, on photo upload.
+      file.withCredentials = false;
     }
     this.uploader.onSuccessItem = (product, response, status, headers) => {
       if (response) {
@@ -50,7 +50,7 @@ export class PhotoEditorComponent implements OnInit {
 
         if(photo.isMain){
           this.product.photoUrl = photo.url;
-          this.accountService.setCurrentUser(this.user); //refreshes the webpage data to show the current picture (need improvement)
+          this.accountService.setCurrentUser(this.user);
         }
       }
     }
@@ -64,10 +64,6 @@ export class PhotoEditorComponent implements OnInit {
     this.productsService.setMainPhoto(photo.id, productName).subscribe(() => {
       this.product.photoUrl = photo.url;
       this.product.photos.forEach(p => p.isMain = (p.id===photo.id)
-      // {
-      //   if (p.isMain) p.isMain = false;
-      //   if (p.id === photo.id) p.isMain = true;
-      // }
       );
     })
   }

@@ -38,8 +38,6 @@ export class RegisterComponent implements OnInit {
           this.cancel();
         },
         error => {
-          // this.validationErrors = error;
-          // console.log(error);
         }
       );
     console.log(this.registerForm.value);

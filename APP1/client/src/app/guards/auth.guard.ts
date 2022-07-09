@@ -9,7 +9,7 @@ import { map, Observable } from 'rxjs';
 })
 export class AuthGuard implements CanActivate{
   /**
-   * Generall check if the website resource is accessibnle for authenticated user.
+   * Generall check if the website resource is accessible for authenticated user.
    * @param acountService brings current authenticated user.
    * @param toastr projects the messages in appropriate cases.
    */

@@ -65,7 +65,7 @@ An online shop, managed by administrator and assistants. Products can be updated
 
 ### Out of scope
 -    Delete user.
--    Category management.
+-    Category management (frontend).
 -    Edit another user's details, by Admin.
 -    View my previous orders.
 -    View my liked products.

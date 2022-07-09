@@ -93,6 +93,17 @@ An online shop, managed by administrator and assistants. Products can be updated
 -    [Use ngx-bootstrap](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/package.json)
 -    [Use font-awesome](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/package.json)
 -    [Redirect to 404](https://github.com/VitoPhW/Angular-Personal-Project#404-page)
+### Server side
+-    [Web API](https://github.com/VitoPhW/Angular-Personal-Project/tree/main/APP1/API)
+-    [OOP](https://github.com/VitoPhW/Angular-Personal-Project/tree/main/APP1/API/Interfaces)
+-    [Controllers](https://github.com/VitoPhW/Angular-Personal-Project/tree/main/APP1/API/Controllers), [Repositories](https://github.com/VitoPhW/Angular-Personal-Project/tree/main/APP1/API/Data)
+-    Design patterns - [Unit of work](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/UnitOfWork.cs), [Repository](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/ProductRepository.cs)
+-    Configuration files - Not synced, contains sensitive information
+-    [JWT Token](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Extensions/IdentityServiceExtensions.cs)
+-    [Data validation](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Middleware/ExceptionMiddleware.cs)
+### Bonus
+-    [Logging (Identity Asp.Net Core)](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Entities/AppUser.cs)
+-    [External API](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Helpers/CloudinarySettings.cs)
 
 ### Out of scope
 -    Delete user.

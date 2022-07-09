@@ -65,34 +65,34 @@ An online shop, managed by administrator and assistants. Products can be updated
 
 ### Project requirements
 #### SQL
--    [SQL Lite Database](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/API/app1.db)
+-    [SQL Lite Database](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/app1.db)
 -    [Users table](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Entities/AppUser.cs)
 -    [CRUD Users](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/UserRepository.cs), [CRUD Products](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/ProductRepository.cs), [CRUD Category](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/CategoryRepository.cs)
 -    [Join Users-LikedProduct](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/LikeRepository.cs)
 -    [Database auto-creation](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/Seed.cs)
 -    [Required parameters + MaxLength (Product)](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Entities/Product.cs)
 ### Client side
--    Journey levels [Products list](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#store-page) - [Products details](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#product-details)
--    [Home page](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#store-page)
--    [Navigation bar](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#store)
+-    Journey levels [Products list](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#store-page) - [Products details](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#product-details)
+-    [Home page](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#store-page)
+-    [Navigation bar](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#store)
 -    Footer - NA
 -    Alt - NA
--    [About](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#about)
--    [Log in](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#welcome-screen)
--    [Registration](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#registration)
--    [Information/error pop-up (authentication toastr)](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/client/src/app/guards/auth.guard.ts)
--    CRUD client side - [Create product](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#new-product-tab), [Update product, create/update/delete photo](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#product-edit---photo-editor-tab)
--    [Move to details page](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#product-details)
+-    [About](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#about)
+-    [Log in](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#welcome-screen)
+-    [Registration](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#registration)
+-    [Information/error pop-up (authentication toastr)](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/src/app/guards/auth.guard.ts)
+-    CRUD client side - [Create product](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#new-product-tab), [Update product, create/update/delete photo](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#product-edit---photo-editor-tab)
+-    [Move to details page](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#product-details)
 -    Search - NA
--    [Components structure](https://github.com/VitoPhW/Angular-Personal-Project/tree/Branch-16--Unit-of-Work-pattern/APP1/client/src/app)
+-    [Components structure](https://github.com/VitoPhW/Angular-Personal-Project/tree/main/APP1/client/src/app)
 -    Clear Console - Done
--    [Filter (Products)](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#store)
--    [Division into pages](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/client/src/app/app-routing.module.ts)
--    [Data validation](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#registration---data-validation)
--    [Call httpClient](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/client/src/app/services/account.service.ts)
--    [Use ngx-bootstrap](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/client/package.json)
--    [Use font-awesome](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/client/package.json)
--    [Redirect to 404](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#404-page)
+-    [Filter (Products)](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#store)
+-    [Division into pages](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/src/app/app-routing.module.ts)
+-    [Data validation](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#registration---data-validation)
+-    [Call httpClient](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/src/app/services/account.service.ts)
+-    [Use ngx-bootstrap](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/package.json)
+-    [Use font-awesome](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/client/package.json)
+-    [Redirect to 404](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#404-page)
 
 ### Out of scope
 -    Delete user.
@@ -104,7 +104,7 @@ An online shop, managed by administrator and assistants. Products can be updated
 -	Check out (placing an order), as a registered user.
 -	Payment process.
 
-#### [SQL Database](https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/API/Data)
+#### [SQL Database](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data)
 -   AspNetRoles - User type (Admin, Assistant, Customer).
 -   AspNetUserRoles - Roles attached to users (Many-to-many).
 -   AspNetUsers - Users.
@@ -114,80 +114,80 @@ An online shop, managed by administrator and assistants. Products can be updated
 -   Product - Products.
 
 #### Pages
--    [Welcome](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#welcome-screen) - Welcome page, first screen on website opening.
--    [Registration](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#registration) - Sign in page, to create new customer.
--    [Store](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#store-page) - Store page, products list with filtering and sorting.
--    [Product details](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#product-details) - Product details screen.
--    [About](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#about) - About page.
--    [Store](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#store) - Store page, Admin/Assistant view.
--    [Product edit](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#product-edit---photo-editor-tab) - Product edit page (Admin/Assistant only).
--    [Edit roles tab](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#edit-roles-tab) - Admin panel, roles management (Admin only).
--    [New Product tab](https://github.com/VitoPhW/Angular-Personal-Project/edit/Branch-16--Unit-of-Work-pattern/README.md#new-product-tab) - Admin panel, new product form (Admin only).
+-    [Welcome](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#welcome-screen) - Welcome page, first screen on website opening.
+-    [Registration](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#registration) - Sign in page, to create new customer.
+-    [Store](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#store-page) - Store page, products list with filtering and sorting.
+-    [Product details](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#product-details) - Product details screen.
+-    [About](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#about) - About page.
+-    [Store](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#store) - Store page, Admin/Assistant view.
+-    [Product edit](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#product-edit---photo-editor-tab) - Product edit page (Admin/Assistant only).
+-    [Edit roles tab](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#edit-roles-tab) - Admin panel, roles management (Admin only).
+-    [New Product tab](https://github.com/VitoPhW/Angular-Personal-Project/edit/main/README.md#new-product-tab) - Admin panel, new product form (Admin only).
 
 ### Customer view
 #### Welcome screen
-<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20First%20page.png"
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/assets/Screenshots/APP%20-%20First%20page.png"
      alt="Welcome"
      width="800px"
      style="float: left; margin-right: 10px;" />
      
 #### Registration
-<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20Registration%20page.png"
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/assets/Screenshots/APP%20-%20Registration%20page.png"
      alt="Registration"
      width="800px"
      style="float: left; margin-right: 10px;" />
      
 #### Registration - data validation
-<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20Registration%20page%20-%20with%20validation%20errors.png"
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/assets/Screenshots/APP%20-%20Registration%20page%20-%20with%20validation%20errors.png"
      alt="Registration - data validation"
      width="800px"
      style="float: left; margin-right: 10px;" />
      
 #### Store page
-<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20Store%20(by%20Customer).png"
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/assets/Screenshots/APP%20-%20Store%20(by%20Customer).png"
      alt="Store"
      width="800px"
      style="float: left; margin-right: 10px;" />
 
 #### Product details
-<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20Product%20details%20(by%20Customer).png"
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/assets/Screenshots/APP%20-%20Product%20details%20(by%20Customer).png"
      alt="Product details"
      width="800px"
      style="float: left; margin-right: 10px;" />
 
 #### About
-<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20About.png"
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/assets/Screenshots/APP%20-%20About.png"
      alt="About"
      width="800px"
      style="float: left; margin-right: 10px;" />
 
 ### Admin/Assistant view
 #### Store
-<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20Store%20(by%20Admin%20or%20Assistant).png"
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/assets/Screenshots/APP%20-%20Store%20(by%20Admin%20or%20Assistant).png"
      alt="Store - Admin or Assistant view"
      width="800px"
      style="float: left; margin-right: 10px;" />
 
 #### Product edit - Photo editor tab
-<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20edit%20Product%20-%20Photo%20editor%20tab%20(by%20Admin%20or%20Assistant).png"
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/assets/Screenshots/APP%20-%20edit%20Product%20-%20Photo%20editor%20tab%20(by%20Admin%20or%20Assistant).png"
      alt="Product edit - Photo editor"
      width="800px"
      style="float: left; margin-right: 10px;" />
 
 #### Edit roles tab
-<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20Admin%20panel%20-%20Edit%20Roles%20tab%20-%20edit%20roles%20for%20..%20(by%20Admin).png"
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/assets/Screenshots/APP%20-%20Admin%20panel%20-%20Edit%20Roles%20tab%20-%20edit%20roles%20for%20..%20(by%20Admin).png"
      alt="Edit roles tab - Admin panel"
      width="800px"
      style="float: left; margin-right: 10px;" />
           
 #### New product tab
-<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20Admin%20panel%20-%20New%20Product%20tab%20(by%20Admin).png"
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/assets/Screenshots/APP%20-%20Admin%20panel%20-%20New%20Product%20tab%20(by%20Admin).png"
      alt="New product tab - Admin panel"
      width="800px"
      style="float: left; margin-right: 10px;" />
      
 #### 404 page
-<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/Branch-16--Unit-of-Work-pattern/APP1/assets/Screenshots/APP%20-%20404.png"
+<img src="https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/assets/Screenshots/APP%20-%20404.png"
      alt="404 page"
      width="800px"
      style="float: left; margin-right: 10px;" />

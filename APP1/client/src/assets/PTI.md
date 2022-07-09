@@ -22,6 +22,7 @@
 - Product details: likes are not loading on refresh.
 - Member details:  likes are not loading on refresh.
 - Members: page doesn't loading, backend issue.
+- Category: no frontend.
 - Admin: make one page with toggle of create Product and create Category.
 - Admin: complete Product Management tab, under Admin.
 - Admin: view users => add button for user edit with condition in edit component if username sent to.

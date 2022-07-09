@@ -14,7 +14,6 @@ namespace API.Controllers
     [Authorize]
     public class CategoryController : BaseApiController
     {
-        // private readonly ICategoryRepository _categoryRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         public CategoryController(IMapper mapper, IUnitOfWork unitOfWork)

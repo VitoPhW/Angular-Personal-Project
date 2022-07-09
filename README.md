@@ -63,8 +63,8 @@ An online shop, managed by administrator and assistants. Products can be updated
 -    Exception handling frontend | error.interceptor.ts, ../errors/..
 -    Design Patterns | Unit of work, Repositories
 
-### Project requirements
-#### SQL
+## Project requirements
+### SQL
 -    [SQL Lite Database](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/app1.db)
 -    [Users table](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Entities/AppUser.cs)
 -    [CRUD Users](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/UserRepository.cs), [CRUD Products](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/ProductRepository.cs), [CRUD Category](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Data/CategoryRepository.cs)
@@ -105,7 +105,7 @@ An online shop, managed by administrator and assistants. Products can be updated
 -    [Logging (Identity Asp.Net Core)](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Entities/AppUser.cs)
 -    [External API](https://github.com/VitoPhW/Angular-Personal-Project/blob/main/APP1/API/Helpers/CloudinarySettings.cs)
 
-### Out of scope
+#### Out of scope
 -    Delete user.
 -    Category management (frontend).
 -    Edit another user's details, by Admin.

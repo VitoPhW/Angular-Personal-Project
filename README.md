@@ -1,6 +1,6 @@
 # Angular-Personal-Project [Eco-Friendly Fashion Store](https://github.com/VitoPhW/Angular-Personal-Project)
 
-"Tal ve Yuval ve" is an online shop of aesthetic style clothes of long-term fashion with recycling ability.
+"Eco-Friendly Fashion Store" is an online shop of aesthetic style clothes of long-term fashion with recycling ability.
 
 ### Description
 An online shop, managed by administrator and assistants. Products can be updated by assistants or admin. The product can be bought by registered customer. Customer can like products and view it details.

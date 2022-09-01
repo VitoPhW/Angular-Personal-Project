@@ -27,6 +27,7 @@ namespace API.Entities
         public int UnitsInStock { get; set; }
 
         public ICollection<Photo> Photos { get; set; }
+        public ICollection<ShoppingCart> AddedByUser { get; set; }
         public ICollection<ProductLike> LikedBy { get; set; } = new List<ProductLike>();
     }
 }

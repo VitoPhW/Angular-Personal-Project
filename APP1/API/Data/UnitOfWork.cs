@@ -22,6 +22,7 @@ namespace API.Data
         public ICategoryRepository CategoryRepository => new CategoryRepository(_context, _mapper);
 
         public ILikeRepository LikeRepository => new LikeRepository(_context);
+        public IShoppingCartRepository ShoppingCartRepository => new ShoppingCartRepository(_context);
 
         public async Task<bool> Complete()
         {

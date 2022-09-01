@@ -8,6 +8,7 @@ namespace API.Interfaces
          IProductRepository ProductRepository { get; }
          ICategoryRepository CategoryRepository { get; }
          ILikeRepository LikeRepository { get;  }
+         IShoppingCartRepository ShoppingCartRepository { get;  }
 
          Task<bool> Complete();
          bool HasChanges();

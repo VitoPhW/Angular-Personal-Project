@@ -24,5 +24,6 @@ namespace API.Entities
         public int Appartment { get; set; }
         public ICollection<ProductLike> LikedProduct { get; set; }
         public ICollection<AppUserRole> UserRoles { get; set; }
+        public ICollection<ShoppingCart> ShoppingCart { get; set; }
     }
 }

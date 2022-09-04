@@ -25,7 +25,7 @@ export class ProductService {
     this.productParams = new ProductParams();
   }
 
-  public get ProductParams() : ProductParams {
+  public get ProductParams(): ProductParams {
     return this.productParams;
   }
 
@@ -42,7 +42,7 @@ export class ProductService {
 
     const cacheKey = Object.values(productParams).join('-');
     const response = this.productCache.get(cacheKey);
-    if(response) return of(response);
+    if (response) return of(response);
 
     let params = this.getPaginationParams(productParams);
     params = params.append('minPrice', productParams.minPrice.toString());
@@ -51,10 +51,10 @@ export class ProductService {
     params = params.append('orderBy', productParams.orderBy);
 
     return this.getPaginatedResult<IProduct[]>(`${this.baseUrl}products`, params)
-    .pipe(tap(response => this.productCache.set(cacheKey, response)));
+      .pipe(tap(response => this.productCache.set(cacheKey, response)));
   }
 
-  private getPaginatedResult<T>(url: string, params: HttpParams):Observable<PaginatedResult<T>> {
+  private getPaginatedResult<T>(url: string, params: HttpParams): Observable<PaginatedResult<T>> {
     const paginatedResult: PaginatedResult<T> = new PaginatedResult<T>();
 
     return this.http.get<T>(url,
@@ -80,7 +80,7 @@ export class ProductService {
     // find in the result an appropriate product
     const foundProduct = allProducts.find(m => m.productname === productname);
     // return the product if it found
-    if(foundProduct) return of(foundProduct);
+    if (foundProduct) return of(foundProduct);
 
     // get and return the product from db
     return this.http.get<IProduct>(`${this.baseUrl}products/${productname}`)
@@ -107,22 +107,22 @@ export class ProductService {
     return this.http.post<IProduct>(this.baseUrl + 'products/create', model);
   }
 
-  private getPaginationParams({pageNumber, pageSize}: ProductParams){
+  private getPaginationParams({ pageNumber, pageSize }: ProductParams) {
     let params = new HttpParams();
     params = params.append('pageNumber', pageNumber.toString());
     params = params.append('pageSize', pageSize.toString());
     return params;
   }
 
-  getLikes(productname: string){
+  getLikes(productname: string) {
     return this.http.get<Partial<IMember>[]>(`${this.baseUrl}likes/${productname}`);
   }
 
   addLike(productname: string) {
-    return this.http.put(`${this.baseUrl}likes/addlike/${productname}`,{});
+    return this.http.put(`${this.baseUrl}likes/addlike/${productname}`, {});
   }
 
   removeLike(productname: string) {
-    return this.http.put(`${this.baseUrl}likes/removelike/${productname}`,{});
+    return this.http.put(`${this.baseUrl}likes/removelike/${productname}`, {});
   }
 }

@@ -1,0 +1,87 @@
+<div class="d-flex justify-content-center mt-3" *ngIf="pagination">
+  <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage"
+    [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;"
+    firstText="&laquo;" lastText="&raquo;">
+  </pagination>
+</div>
+
+
+<div class="container d-flex flex-row shoppingcart">
+  <div class="cart card p-4">
+    <h4><b>Shopping Cart</b></h4>
+
+    <div class="row my-2 text-center" *ngFor="let item of shoppingCart">
+      <hr>
+      <div class="col-2">
+        <img class="card-img" [src]="item.photoUrl" alt="{{item.productname}}"
+          routerLink="/products/{{item.productname}}">
+      </div>
+      <div class="col-5 align-self-center">
+        <a class="nav-link" routerLinkActive="active" routerLink="/products/{{item.productname}}">
+          <i class="fa fa-tag mr-2"></i>{{item.productname}}
+        </a>
+      </div>
+      <div class="col-2 d-flex">
+        <button class="btn btn-primary btn-sm align-self-center"
+          (click)="(setCartItem(item.productID, item.quantity-1))">
+          -
+        </button>
+
+        <h6 class="card-text text-center align-self-center m-2">{{item.quantity}}</h6>
+
+        <button class="btn btn-primary btn-sm align-self-center"
+          (click)="(setCartItem(item.productID, item.quantity+1))">
+          +
+        </button>
+      </div>
+      <div class="col-2 align-self-center">
+        <h6 class="card-text text-center">
+          $ {{item.unitPrice}}
+        </h6>
+      </div>
+      <div class="col-1 align-self-center">
+        <button class="btn btn-outline-danger  btn-sm" (click)="(setCartItem(item.productID, 0))">
+          ✕
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="summary card bg-light p-4">
+
+    <h5><b>Summary</b></h5>
+    <hr>
+    <div class="row">
+      <div class="col">{{shoppingCartCount$ | async}} item{{(shoppingCartCount$ | async) == 1 ? "" : "s"}}</div>
+      <div class="col text-right">$ 132.00</div>
+    </div>
+
+    <form class="options">
+      <p>Shipping</p>
+      <select class="form-select mb-4">
+        <option class="text-muted">Standard-Delivery - $ 5.00</option>
+        <option class="text-muted">Extreme-Delivery - $ 599.00</option>
+      </select>
+      <p>Give code</p>
+      <input type="text" id="code" class="form-control" placeholder="Enter your code">
+    </form>
+
+    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+      <div class="col">Total price</div>
+      <div class="col text-right">$ 137.00</div>
+    </div>
+    <button class="btn btn-primary" (click)="(checkout())">Checkout</button>
+  </div>
+
+</div>
+
+
+
+<div class="d-flex justify-content-center mt-3" *ngIf="pagination">
+  <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage"
+    [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;"
+    firstText="&laquo;" lastText="&raquo;">
+
+  </pagination>
+</div>

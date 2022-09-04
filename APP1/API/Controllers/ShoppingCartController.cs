@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using API.Entities;
 using API.Extensions;
@@ -20,7 +21,7 @@ namespace API.Controllers
         }
 
         [HttpPut("setcartitem/{productid}/{quantity}")]
-        public async Task<ActionResult> SetCartItem(int productId, int quantity)
+        public async Task<ActionResult> SetCartItem(int productId, int quantity) //TODO set validation of quantity <= unitsInStock
         {
             var userId = User.GetUserId();
             var user = await _unitOfWork.ShoppingCartRepository.GetUserAndCart(userId);
@@ -39,10 +40,10 @@ namespace API.Controllers
                     }
 
                     if (cartItem.quantity == quantity)
-                        return Ok();
-                    
+                        return Ok(cartItem.quantity);
+
                     cartItem.quantity = quantity;
-                    if (await _unitOfWork.Complete()) return Ok();
+                    if (await _unitOfWork.Complete()) return Ok(cartItem.quantity);
                 }
             }
 
@@ -61,7 +62,7 @@ namespace API.Controllers
         }
 
         [HttpPost("addtocart/{productid}")]
-        public async Task<ActionResult> AddToCart(int productId)
+        public async Task<ActionResult> AddToCart(int productId) //TODO set validation of quantity <= unitsInStock
         {
             var userId = User.GetUserId();
             var user = await _unitOfWork.ShoppingCartRepository.GetUserAndCart(userId);
@@ -74,7 +75,7 @@ namespace API.Controllers
                 if (cartItem.ProductId == productToAdd.ProductID)
                 {
                     cartItem.quantity++;
-                    if (await _unitOfWork.Complete()) return Ok();
+                    if (await _unitOfWork.Complete()) return Ok(cartItem.quantity);
                 }
             }
 
@@ -86,7 +87,7 @@ namespace API.Controllers
             };
 
             user.ShoppingCart.Add(item);
-            if (await _unitOfWork.Complete()) return Ok();
+            if (await _unitOfWork.Complete()) return Ok(item.quantity);
             return BadRequest("Failed to add a product to cart.");
         }
 
@@ -102,8 +103,32 @@ namespace API.Controllers
                 items.TotalCount,
                 items.TotalPages
                 );
-            
+
             return Ok(items);
+        }
+
+        [HttpGet("countitems")]
+        public async Task<ActionResult<int>> GetItemsCount()
+        {
+            var userId = User.GetUserId();
+            var count = await _unitOfWork.ShoppingCartRepository.GetItemsCount(userId);
+            return Ok(count);
+        }
+
+        [HttpPut("checkout")]
+        public async Task<ActionResult> Checkout()
+        {
+            var userId = User.GetUserId();
+            var user = await _unitOfWork.ShoppingCartRepository.GetUserCartAndProduct(userId);
+            
+            foreach (var item in user.ShoppingCart)
+            {
+                item.Product.UnitsInStock -= item.quantity;
+                user.ShoppingCart.Remove(item);
+            }
+
+            if (await _unitOfWork.Complete()) return Ok();
+            return BadRequest("Failed to checkout");
         }
     }
 }

@@ -1,3 +1,4 @@
+import { MemberShoppingCartComponent } from './members/member-shopping-cart/member-shopping-cart.component';
 import { AdminGuard } from './guards/admin.guard';
 import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.guard';
 import { MemberEditComponent } from './member-edit/member-edit.component';
@@ -37,7 +38,9 @@ const routes: Routes = [
       { path: 'admin',
       loadChildren: () => import('./modules/admin.module').then(p => p.AdminModule),
       canActivate: [AdminGuard]
-      }
+      },
+      // Shopping Cart
+      { path: 'shoppingcart', component: MemberShoppingCartComponent}
     ]
   },
   { path: 'about', component: AboutComponent },

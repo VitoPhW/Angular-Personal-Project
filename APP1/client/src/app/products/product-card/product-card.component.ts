@@ -1,3 +1,4 @@
+import { MembersService } from './../../services/members.service';
 import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/services/product.service';
 import { IProduct } from '../../models/IProduct';
@@ -11,23 +12,31 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductCardComponent implements OnInit {
   @Input() product!: IProduct;
 
-  constructor(private productService: ProductService, private toastr: ToastrService) { }
+  constructor(
+    private productService: ProductService,
+    private membersService: MembersService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
 
-  addRemoveLike(product: IProduct, ){
-    if(!product.isLiked){
+  addRemoveLike(product: IProduct) {
+    if (!product.isLiked) {
       this.productService.addLike(product.productname).subscribe(() => {
-        this.toastr.success(`You have liked ${product.productname}.`)
+        this.toastr.success(`You have liked ${product.productname}.`);
         this.product.isLiked = true;
       });
     }
     else {
       this.productService.removeLike(product.productname).subscribe(() => {
-        this.toastr.info(`Like has been removed for ${product.productname}.`)
+        this.toastr.info(`Like has been removed for ${product.productname}.`);
         this.product.isLiked = false;
       });
     }
+  }
+
+  addToShoppingCart(product: IProduct) {
+    this.membersService.addToShoppingCart(product.productID).subscribe(() => {
+      this.toastr.success(`${product.productname} added to your shopping cart.`)});
   }
 }

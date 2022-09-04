@@ -12,16 +12,19 @@
           <i class="fa fa-heart"></i>
         </button>
       </li>
+
       <li class="list-inline-item">
         <button class="btn btn-primary btn-sm" routerLink="/products/{{product.productname}}">
           <i class="fa fa-info"></i>
         </button>
       </li>
+
       <li class="list-inline-item">
-        <button class="btn btn-primary btn-sm">
+        <button class="btn btn-primary btn-sm" (click)="addToShoppingCart(product)">
           <i class="fa fa-cart-plus"></i>
         </button>
       </li>
+
       <li class="list-inline-item" *appHasRole="['Admin', 'Assistant']">
         <button class="btn btn-info btn-sm" routerLink="/products/{{product.productname}}/edit">
           <i class="fa fa-pencil"></i>

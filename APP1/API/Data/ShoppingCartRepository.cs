@@ -47,5 +47,19 @@ namespace API.Data
             .Include(p => p.ShoppingCart)
             .FirstOrDefaultAsync(u => u.Id == userId);
         }
+
+        public async Task<AppUser> GetUserCartAndProduct(int userId)
+        {
+            return await _context.Users
+            .Include(sc => sc.ShoppingCart).ThenInclude( p => p.Product)
+            .FirstOrDefaultAsync(u => u.Id == userId);            
+        }
+        
+        public async Task<int> GetItemsCount(int userId)
+        {
+            var cart = _context.ShoppingCart.AsQueryable();
+            cart = cart.Where(u => u.UserId == userId);
+            return await cart.CountAsync();
+        }
     }
 }

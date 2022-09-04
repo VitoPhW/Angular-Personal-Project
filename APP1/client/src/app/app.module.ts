@@ -23,6 +23,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { MemberEditComponent } from './member-edit/member-edit.component';
 import { AdminModule } from './modules/admin.module';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
+import { MemberShoppingCartComponent } from './members/member-shopping-cart/member-shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
     NotFoundComponent,
     ServerErrorComponent,
     MemberEditComponent,
-    RolesModalComponent
+    RolesModalComponent,
+    MemberShoppingCartComponent
    ],
   imports: [
     BrowserModule,

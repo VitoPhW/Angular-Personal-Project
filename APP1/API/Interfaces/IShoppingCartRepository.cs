@@ -10,6 +10,8 @@ namespace API.Interfaces
     {
         Task<ShoppingCart> GetCartItemByItemId(int itemId);
         Task<AppUser> GetUserAndCart(int userId);
+        Task<AppUser> GetUserCartAndProduct(int userId);
         Task<PagedList<CartItemDto>> GetCartItemsByUser(PaginationParams paginationParams, int userId);
+        Task<int> GetItemsCount(int userId);
     }
 }

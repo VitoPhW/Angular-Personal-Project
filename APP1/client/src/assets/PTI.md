@@ -1,5 +1,9 @@
 # Points To Improve
 
+- create "basket".
+- responsive UI - for mobile phones.
+- improve homepage design.
+
 - https://localhost:4200/products - is it right route name?
 - Build Postman equvivalent of Dating app collection.
 - MD5
